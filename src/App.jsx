@@ -242,7 +242,7 @@ export default function App() {
               <Shuffle className="h-5 w-5 text-cyan-300" />
             </div>
             <div>
-              <p className="text-lg font-bold">WordSpark</p>
+              <p className="text-lg font-bold"><WordShuffl></WordShuffl></p>
               <p className="text-xs text-slate-400">Smart word unscrambler</p>
             </div>
           </div>
