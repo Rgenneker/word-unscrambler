@@ -242,7 +242,7 @@ export default function App() {
               <Shuffle className="h-5 w-5 text-cyan-300" />
             </div>
             <div>
-              <p className="text-lg font-bold">WordShuffl</p>
+              <p className="text-lg font-bold">WordSpark</p>
               <p className="text-xs text-slate-400">Smart word unscrambler</p>
             </div>
           </div>
@@ -335,22 +335,22 @@ export default function App() {
                   <div className="grid gap-3 sm:grid-cols-2">
                     <label>
                       <span className="mb-2 block text-xs font-bold uppercase tracking-wide text-slate-400">Starts with</span>
-                      <input value={startsWith} onChange={(e) => setStartsWith(e.target.value)} placeholder="e.g. st" className="input-style" />
+                      <input value={startsWith} onChange={(e) => setStartsWith(e.target.value)} placeholder="e.g. st" className="h-12 w-full rounded-2xl border border-white/10 bg-slate-950/70 px-4 font-semibold text-slate-100 outline-none transition placeholder:text-slate-500 focus:border-cyan-300/70 focus:ring-4 focus:ring-cyan-300/10" />
                     </label>
 
                     <label>
                       <span className="mb-2 block text-xs font-bold uppercase tracking-wide text-slate-400">Ends with</span>
-                      <input value={endsWith} onChange={(e) => setEndsWith(e.target.value)} placeholder="e.g. ing" className="input-style" />
+                      <input value={endsWith} onChange={(e) => setEndsWith(e.target.value)} placeholder="e.g. ing" className="h-12 w-full rounded-2xl border border-white/10 bg-slate-950/70 px-4 font-semibold text-slate-100 outline-none transition placeholder:text-slate-500 focus:border-cyan-300/70 focus:ring-4 focus:ring-cyan-300/10" />
                     </label>
 
                     <label>
                       <span className="mb-2 block text-xs font-bold uppercase tracking-wide text-slate-400">Contains letters</span>
-                      <input value={containsLetters} onChange={(e) => setContainsLetters(e.target.value)} placeholder="e.g. ea" className="input-style" />
+                      <input value={containsLetters} onChange={(e) => setContainsLetters(e.target.value)} placeholder="e.g. ea" className="h-12 w-full rounded-2xl border border-white/10 bg-slate-950/70 px-4 font-semibold text-slate-100 outline-none transition placeholder:text-slate-500 focus:border-cyan-300/70 focus:ring-4 focus:ring-cyan-300/10" />
                     </label>
 
                     <label>
                       <span className="mb-2 block text-xs font-bold uppercase tracking-wide text-slate-400">Word length</span>
-                      <select value={wordLength} onChange={(e) => setWordLength(e.target.value)} className="input-style">
+                      <select value={wordLength} onChange={(e) => setWordLength(e.target.value)} className="h-12 w-full rounded-2xl border border-white/10 bg-slate-950/70 px-4 font-semibold text-slate-100 outline-none transition placeholder:text-slate-500 focus:border-cyan-300/70 focus:ring-4 focus:ring-cyan-300/10">
                         <option value="">Any length</option>
                         {Array.from({ length: Math.max(availableLetters.length, 10) - 1 }, (_, index) => index + 2).map((length) => (
                           <option key={length} value={length}>
@@ -362,18 +362,18 @@ export default function App() {
 
                     <label>
                       <span className="mb-2 block text-xs font-bold uppercase tracking-wide text-slate-400">Exact pattern</span>
-                      <input value={exactPattern} onChange={(e) => setExactPattern(e.target.value)} placeholder="e.g. s?l_nt" className="input-style" />
+                      <input value={exactPattern} onChange={(e) => setExactPattern(e.target.value)} placeholder="e.g. s?l_nt" className="h-12 w-full rounded-2xl border border-white/10 bg-slate-950/70 px-4 font-semibold text-slate-100 outline-none transition placeholder:text-slate-500 focus:border-cyan-300/70 focus:ring-4 focus:ring-cyan-300/10" />
                       <p className="mt-1 text-xs text-slate-500">Use ? or _ for unknown letters.</p>
                     </label>
 
                     <label>
                       <span className="mb-2 block text-xs font-bold uppercase tracking-wide text-slate-400">Exclude letters</span>
-                      <input value={excludeLetters} onChange={(e) => setExcludeLetters(e.target.value)} placeholder="e.g. qxz" className="input-style" />
+                      <input value={excludeLetters} onChange={(e) => setExcludeLetters(e.target.value)} placeholder="e.g. qxz" className="h-12 w-full rounded-2xl border border-white/10 bg-slate-950/70 px-4 font-semibold text-slate-100 outline-none transition placeholder:text-slate-500 focus:border-cyan-300/70 focus:ring-4 focus:ring-cyan-300/10" />
                     </label>
 
                     <label className="sm:col-span-2">
                       <span className="mb-2 block text-xs font-bold uppercase tracking-wide text-slate-400">Vowel / consonant filter</span>
-                      <select value={vowelFilter} onChange={(e) => setVowelFilter(e.target.value)} className="input-style">
+                      <select value={vowelFilter} onChange={(e) => setVowelFilter(e.target.value)} className="h-12 w-full rounded-2xl border border-white/10 bg-slate-950/70 px-4 font-semibold text-slate-100 outline-none transition placeholder:text-slate-500 focus:border-cyan-300/70 focus:ring-4 focus:ring-cyan-300/10">
                         <option value="">Any vowel/consonant pattern</option>
                         <option value="has-vowel">Has at least one vowel</option>
                         <option value="no-vowels">No vowels</option>
