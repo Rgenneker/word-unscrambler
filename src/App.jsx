@@ -20,7 +20,7 @@ export default function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/5-letter-words" element={<FiveLetterWords />} />
-        <Route path="/words-starting-with-a" element={<WordsStartingWith />} />
+        <Route path="/words-starting-with" element={<WordsStartingWith />} />
         <Route path="/words-ending-with" element={<WordsEndingWith />} />
         <Route path="/word-length" element={<WordLength />} />
         <Route path="/letter-combinations" element={<LetterCombination />} />
