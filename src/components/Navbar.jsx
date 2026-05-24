@@ -21,10 +21,6 @@ export default function Navbar() {
             About
           </Link>
 
-          <Link className="hover:text-cyan-300 transition" to="/contact">
-            Contact
-          </Link>
-
           <Link className="hover:text-cyan-300 transition" to="/5-letter-words">
             5 Letter Words
           </Link>
@@ -32,7 +28,7 @@ export default function Navbar() {
           <Link className="hover:text-cyan-300 transition" to="/words-starting-with-a">
             Words Starting With 
           </Link>
-          
+
           <Link className="hover:text-cyan-300 transition" to="/words-ending-with">
             Words Ending With
           </Link>
@@ -43,6 +39,10 @@ export default function Navbar() {
 
           <Link className="hover:text-cyan-300 transition" to="/terms-and-conditions">
             Terms
+          </Link>
+
+           <Link className="hover:text-cyan-300 transition" to="/contact">
+            Contact
           </Link>
 
           <Link className="hover:text-cyan-300 transition" to="/sitemap">
