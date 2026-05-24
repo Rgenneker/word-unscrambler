@@ -491,18 +491,19 @@ export default function Home() {
                         </span>
                       </button>
 
-                      <div className="pointer-events-none absolute bottom-full left-1/2 z-20 mb-3 w-64 -translate-x-1/2 rounded-2xl border border-white/10 bg-slate-900 p-3 text-left text-sm text-slate-200 opacity-0 shadow-[0_10px_40px_rgba(34,211,238,0.15)] transition group-hover:opacity-100">
-                        <p className="font-bold text-cyan-100">
-                          {item.word} • {item.score} pts
-                        </p>
-                        <p className="mt-1 leading-5 text-slate-200">
-                          {definitions[item.word]
-                            ? definitions[item.word]
-                            : loadingDefinition === item.word
-                              ? "Loading definition..."
-                              : "Hover or tap to load definition."}
-                        </p>
-                      </div>
+                      <div className="pointer-events-none fixed left-1/2 top-24 z-[9999] w-[90vw] max-w-xl -translate-x-1/2 rounded-3xl border border-cyan-300/20 bg-slate-950 p-5 text-left text-sm text-slate-200 opacity-0 shadow-[0_20px_80px_rgba(34,211,238,0.25)] ring-1 ring-white/10 transition group-hover:opacity-100 group-focus-within:opacity-100">
+  <p className="text-lg font-black text-cyan-100">
+    {item.word} • {item.score} pts
+  </p>
+
+  <p className="mt-3 max-h-56 overflow-y-auto leading-7 text-slate-200">
+    {definitions[item.word]
+      ? definitions[item.word]
+      : loadingDefinition === item.word
+        ? "Loading definition..."
+        : "Hover or tap to load definition."}
+  </p>
+</div>
                     </div>
                   ))}
                 </div>

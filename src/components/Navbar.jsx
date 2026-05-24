@@ -32,6 +32,10 @@ export default function Navbar() {
           <Link className="hover:text-cyan-300 transition" to="/words-starting-with-a">
             Words Starting With 
           </Link>
+          
+          <Link className="hover:text-cyan-300 transition" to="/words-ending-with">
+            Words Ending With
+          </Link>
 
           <Link className="hover:text-cyan-300 transition" to="/privacy-policy">
             Privacy
