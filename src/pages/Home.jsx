@@ -404,6 +404,51 @@ export default function Home() {
                   </button>
                 ))}
               </div>
+             <section className="mt-8">
+  <div className="mb-5 text-center">
+    <p className="text-sm font-medium tracking-wide text-slate-400">
+      Improve your vocabulary and sharpen your word skills by exploring more word games below.
+    </p>
+  </div>
+
+  <div className="flex flex-wrap items-center justify-center gap-3">
+    <a
+      href="https://nyt-wordle-app.vercel.app"
+      target="_blank"
+      rel="noreferrer"
+     className="w-[170px] rounded-2xl border border-cyan-400/20 bg-slate-900 px-5 py-3 text-center text-sm font-semibold text-cyan-200 transition hover:scale-105 hover:bg-cyan-400/10"
+    >
+      Play Wordle
+    </a>
+
+    <a
+      href="https://playscrabble.com/"
+      target="_blank"
+      rel="noreferrer"
+      className="w-[170px] rounded-2xl border border-cyan-400/20 bg-slate-900 px-5 py-3 text-center text-sm font-semibold text-cyan-200 transition hover:scale-105 hover:bg-cyan-400/10"
+    >
+      Play Scrabble
+    </a>
+
+    <a
+      href="https://www.wordgames.com/"
+      target="_blank"
+      rel="noreferrer"
+      className="rounded-2xl border border-purple-400/20 bg-slate-900 px-5 py-3 text-sm font-semibold text-purple-200 transition hover:scale-105 hover:bg-purple-400/10"
+    >
+      Play Word Games
+    </a>
+
+    <a
+      href="https://www.wordplays.com/crossword-solver/PRO"
+      target="_blank"
+      rel="noreferrer"
+      className="w-[170px] rounded-2xl border border-emerald-400/20 bg-slate-900 px-5 py-3 text-center text-sm font-semibold text-emerald-200 transition hover:scale-105 hover:bg-emerald-400/10"
+    >
+      WordPlay
+    </a>
+  </div>
+</section>
             </div>
           </div>
 

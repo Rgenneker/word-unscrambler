@@ -9,6 +9,8 @@ import SitemapPage from "./pages/SitemapPage";
 import FiveLetterWords from "./pages/FiveLetterWords";
 import WordsEndingWith from "./pages/WordsEndingWith";
 import WordsStartingWith from "./pages/WordsStartingWith";
+import WordLength from "./pages/WordLength";
+import LetterCombination from "./pages/LetterCombination";
 
 export default function App() {
   return (
@@ -20,6 +22,8 @@ export default function App() {
         <Route path="/5-letter-words" element={<FiveLetterWords />} />
         <Route path="/words-starting-with-a" element={<WordsStartingWith />} />
         <Route path="/words-ending-with" element={<WordsEndingWith />} />
+        <Route path="/word-length" element={<WordLength />} />
+        <Route path="/letter-combinations" element={<LetterCombination />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-and-conditions" element={<TermsConditions />} />
         <Route path="/sitemap" element={<SitemapPage />} />
