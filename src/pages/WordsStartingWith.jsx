@@ -1,12 +1,17 @@
+import Navbar from "../components/Navbar";
+
 export default function WordsStartingWith() {
   return (
-    <main className="min-h-screen bg-slate-950 text-white p-10">
+    <main className="min-h-screen bg-slate-950 text-white">
+        <Navbar />
+
+        <div className="p-10">
       <h1 className="text-4xl font-black text-cyan-300">
-        Words Starting With A
+        Words Starting With A to Z
       </h1>
 
       <p className="mt-4 text-lg text-slate-300">
-        Find English words that start with the letter A for
+        Find English words that start with the letter A to Z for
         word games, puzzles, Scrabble, and crosswords.
       </p>
 
@@ -19,6 +24,7 @@ export default function WordsStartingWith() {
           <li>Artist</li>
           <li>Amazing</li>
         </ul>
+      </div>
       </div>
     </main>
   );

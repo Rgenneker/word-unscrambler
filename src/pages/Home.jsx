@@ -1,3 +1,4 @@
+import Navbar from "../components/Navbar";
 import React, { useMemo, useState } from "react";
 import englishWords from "an-array-of-english-words";
 import {
@@ -233,6 +234,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen overflow-hidden bg-slate-950 text-slate-100">
+        <Navbar />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(34,211,238,0.22),transparent_35%),radial-gradient(circle_at_top_right,rgba(168,85,247,0.18),transparent_30%),linear-gradient(180deg,#020617,#0F172A)]" />
 
       <div className="relative mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
@@ -524,6 +526,24 @@ export default function Home() {
           </div>
         </section>
       </div>
+      <footer className="border-t border-white/10 bg-slate-950 px-6 py-10 text-center text-sm text-slate-400">
+  <div className="mx-auto max-w-5xl space-y-4">
+
+    <p>
+      WordShuffl® is a registered trademark. All intellectual property rights
+      in and to the game are owned in South Africa by WordShuffl Trading.
+    </p>
+
+    <p>
+      This site is for entertainment and informational purposes only.
+    </p>
+
+    <p className="font-semibold text-slate-500">
+      © 2026 WordShuffl.com. ALL RIGHTS RESERVED
+    </p>
+
+  </div>
+</footer>
     </main>
   );
 }

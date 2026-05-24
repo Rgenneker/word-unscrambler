@@ -1,6 +1,11 @@
+import Navbar from "../components/Navbar";
+
 export default function Contact() {
   return (
-    <main className="min-h-screen bg-slate-950 text-white p-10">
+    <main className="min-h-screen bg-slate-950 text-white">
+        <Navbar />
+
+        <div className="p-10">
       <div className="max-w-3xl mx-auto">
         <h1 className="text-5xl font-black text-cyan-300">Contact Us</h1>
 
@@ -21,6 +26,7 @@ export default function Contact() {
             We aim to respond to all inquiries within 24–48 hours.
           </p>
         </div>
+      </div>
       </div>
     </main>
   );

@@ -1,6 +1,11 @@
+import Navbar from "../components/Navbar";
+
 export default function About() {
   return (
-    <main className="min-h-screen bg-slate-950 text-white p-10">
+    <main className="min-h-screen bg-slate-950 text-white">
+        <Navbar />
+
+        <div className="p-10">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-5xl font-black text-cyan-300">About WordShuffl</h1>
 
@@ -24,6 +29,7 @@ export default function About() {
             <li>• Fast search results</li>
           </ul>
         </div>
+      </div>
       </div>
     </main>
   );

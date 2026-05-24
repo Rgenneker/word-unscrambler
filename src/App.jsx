@@ -16,11 +16,11 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/5-letter-words" element={<FiveLetterWords />} />
+        <Route path="/words-starting-with-a" element={<WordsStartingWith />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-and-conditions" element={<TermsConditions />} />
         <Route path="/sitemap" element={<SitemapPage />} />
-        <Route path="/5-letter-words" element={<FiveLetterWords />} />
-        <Route path="/words-starting-with-a" element={<WordsStartingWith />} />
       </Routes>
     </BrowserRouter>
   );

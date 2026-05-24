@@ -1,8 +1,12 @@
 import { Link } from "react-router-dom";
+import Navbar from "../components/Navbar";
 
 export default function SitemapPage() {
   return (
-    <main className="min-h-screen bg-slate-950 text-white p-10">
+    <main className="min-h-screen bg-slate-950 text-white">
+        <Navbar />
+
+        <div className="p-10">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-5xl font-black text-cyan-300">Website Sitemap</h1>
 
@@ -17,6 +21,7 @@ export default function SitemapPage() {
             <li><Link className="text-cyan-300 hover:underline" to="/words-starting-with-a">Words Starting With A</Link></li>
           </ul>
         </div>
+      </div>
       </div>
     </main>
   );

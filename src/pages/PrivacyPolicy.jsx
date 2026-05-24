@@ -1,6 +1,11 @@
+import Navbar from "../components/Navbar";
+
 export default function PrivacyPolicy() {
   return (
-    <main className="min-h-screen bg-slate-950 text-white p-10">
+    <main className="min-h-screen bg-slate-950 text-white">
+        <Navbar />
+
+        <div className="p-10">
       <div className="max-w-5xl mx-auto">
         <h1 className="text-5xl font-black text-cyan-300">
           Privacy Policy
@@ -245,6 +250,7 @@ export default function PrivacyPolicy() {
           </section>
 
         </div>
+      </div>
       </div>
     </main>
   );
