@@ -30,7 +30,7 @@ export default function Navbar() {
           </Link>
 
           <Link className="hover:text-cyan-300 transition" to="/words-starting-with-a">
-            Words Starting With A
+            Words Starting With 
           </Link>
 
           <Link className="hover:text-cyan-300 transition" to="/privacy-policy">
