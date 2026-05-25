@@ -19,8 +19,13 @@ export default function Contact() {
           </p>
 
           <p className="mt-3 text-lg text-slate-300">
-            support@wordshuffl.com
-          </p>
+  <a
+    href="mailto:support@wordshuffl.com"
+    className="text-cyan-300 transition hover:underline"
+  >
+    support@wordshuffl.com
+  </a>
+</p>
 
           <p className="mt-6 text-slate-400 leading-7">
             We aim to respond to all inquiries within 24–48 hours.
