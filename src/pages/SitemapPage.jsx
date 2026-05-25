@@ -10,17 +10,47 @@ export default function SitemapPage() {
       <div className="max-w-4xl mx-auto">
         <h1 className="text-5xl font-black text-cyan-300">Website Sitemap</h1>
 
-        <div className="mt-10 rounded-3xl border border-white/10 bg-slate-900/50 p-8">
-          <ul className="space-y-4 text-lg">
-            <li><Link className="text-cyan-300 hover:underline" to="/">Home</Link></li>
-            <li><Link className="text-cyan-300 hover:underline" to="/about">About</Link></li>
-            <li><Link className="text-cyan-300 hover:underline" to="/contact">Contact</Link></li>
-            <li><Link className="text-cyan-300 hover:underline" to="/privacy-policy">Privacy Policy</Link></li>
-            <li><Link className="text-cyan-300 hover:underline" to="/terms-and-conditions">Terms & Conditions</Link></li>
-            <li><Link className="text-cyan-300 hover:underline" to="/5-letter-words">5 Letter Words</Link></li>
-            <li><Link className="text-cyan-300 hover:underline" to="/words-starting-with-a">Words Starting With A</Link></li>
-          </ul>
-        </div>
+        <div className="space-y-4 text-lg">
+  <Link className="block text-cyan-300 hover:underline" to="/">
+    Home
+  </Link>
+
+  <Link className="block text-cyan-300 hover:underline" to="/about">
+    About
+  </Link>
+
+  <Link className="block text-cyan-300 hover:underline" to="/contact">
+    Contact
+  </Link>
+
+  <Link className="block text-cyan-300 hover:underline" to="/privacy-policy">
+    Privacy Policy
+  </Link>
+
+  <Link className="block text-cyan-300 hover:underline" to="/terms-and-conditions">
+    Terms & Conditions
+  </Link>
+
+  <Link className="block text-cyan-300 hover:underline" to="/5-letter-words">
+    5 Letter Words
+  </Link>
+
+  <Link className="block text-cyan-300 hover:underline" to="/words-starting-with">
+    Words Starting With
+  </Link>
+
+  <Link className="block text-cyan-300 hover:underline" to="/words-ending-with">
+    Words Ending With
+  </Link>
+
+  <Link className="block text-cyan-300 hover:underline" to="/word-length">
+    Word Length
+  </Link>
+
+  <Link className="block text-cyan-300 hover:underline" to="/letter-combinations">
+    Letter Combinations
+  </Link>
+</div>
       </div>
       </div>
     </main>
