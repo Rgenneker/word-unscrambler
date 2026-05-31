@@ -1,83 +1,156 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 
 export default function Navbar() {
+  const [mobileOpen, setMobileOpen] = useState(false);
   const [toolsOpen, setToolsOpen] = useState(false);
 
-  const closeMenu = () => {
+  const closeMenus = () => {
+    setMobileOpen(false);
     setToolsOpen(false);
   };
 
   return (
-    <header className="sticky top-0 z-[9999] border-b border-white/10 bg-slate-950/95 backdrop-blur">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        <Link to="/" onClick={closeMenu} className="text-2xl font-black text-cyan-300">
-          WordShuffl
-        </Link>
-
-        <nav className="hidden items-center gap-6 text-sm font-medium text-slate-300 md:flex">
-          <Link onClick={closeMenu} className="transition hover:text-cyan-300" to="/">
-            Home
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-slate-950/95 backdrop-blur">
+      <div className="mx-auto max-w-7xl px-4">
+        <div className="flex items-center justify-between py-4">
+          <Link
+            to="/"
+            onClick={closeMenus}
+            className="text-2xl font-black text-cyan-300"
+          >
+            WordShuffl
           </Link>
 
-          <div className="relative">
-            <button
-              type="button"
-              onClick={() => setToolsOpen((current) => !current)}
-              className="flex items-center gap-2 transition hover:text-cyan-300"
-            >
-              Word Tools
-              <ChevronDown
-                className={`h-4 w-4 transition ${toolsOpen ? "rotate-180" : ""}`}
-              />
-            </button>
+          {/* Desktop Menu */}
+          <nav className="hidden items-center gap-6 text-sm font-medium text-slate-300 lg:flex">
+            <Link to="/" className="hover:text-cyan-300">
+              Home
+            </Link>
 
-            {toolsOpen && (
-              <div className="absolute left-0 top-full z-[99999] mt-4 w-72 rounded-2xl border border-white/10 bg-slate-900 p-3 shadow-2xl ring-1 ring-cyan-400/10">
-                <Link onClick={closeMenu} className="block rounded-xl px-4 py-3 transition hover:bg-cyan-400/10 hover:text-cyan-300" to="/5-letter-words">
-                  5 Letter Words
-                </Link>
+            <div className="relative">
+              <button
+                onClick={() => setToolsOpen(!toolsOpen)}
+                className="flex items-center gap-2 hover:text-cyan-300"
+              >
+                Word Tools
+                <ChevronDown
+                  className={`h-4 w-4 transition ${
+                    toolsOpen ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
 
-                <Link onClick={closeMenu} className="block rounded-xl px-4 py-3 transition hover:bg-cyan-400/10 hover:text-cyan-300" to="/words-starting-with">
-                  Words Starting With
-                </Link>
+              {toolsOpen && (
+                <div className="absolute left-0 mt-3 w-64 rounded-2xl border border-white/10 bg-slate-900 p-3 shadow-2xl">
+                  <Link onClick={closeMenus} className="block rounded-xl px-4 py-3 hover:bg-cyan-400/10" to="/5-letter-words">
+                    5 Letter Words
+                  </Link>
 
-                <Link onClick={closeMenu} className="block rounded-xl px-4 py-3 transition hover:bg-cyan-400/10 hover:text-cyan-300" to="/words-ending-with">
-                  Words Ending With
-                </Link>
+                  <Link onClick={closeMenus} className="block rounded-xl px-4 py-3 hover:bg-cyan-400/10" to="/words-starting-with">
+                    Words Starting With
+                  </Link>
 
-                <Link onClick={closeMenu} className="block rounded-xl px-4 py-3 transition hover:bg-cyan-400/10 hover:text-cyan-300" to="/word-length">
-                  Word Length
-                </Link>
+                  <Link onClick={closeMenus} className="block rounded-xl px-4 py-3 hover:bg-cyan-400/10" to="/words-ending-with">
+                    Words Ending With
+                  </Link>
 
-                <Link onClick={closeMenu} className="block rounded-xl px-4 py-3 transition hover:bg-cyan-400/10 hover:text-cyan-300" to="/letter-combinations">
-                  Letter Combinations
-                </Link>
+                  <Link onClick={closeMenus} className="block rounded-xl px-4 py-3 hover:bg-cyan-400/10" to="/word-length">
+                    Word Length
+                  </Link>
+
+                  <Link onClick={closeMenus} className="block rounded-xl px-4 py-3 hover:bg-cyan-400/10" to="/letter-combinations">
+                    Letter Combinations
+                  </Link>
+                </div>
+              )}
+            </div>
+
+            <Link to="/about">About</Link>
+            <Link to="/contact">Contact</Link>
+            <Link to="/privacy-policy">Privacy</Link>
+            <Link to="/terms-and-conditions">Terms</Link>
+            <Link to="/sitemap">Sitemap</Link>
+          </nav>
+
+          {/* Mobile Button */}
+          <button
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className="lg:hidden text-cyan-300"
+          >
+            {mobileOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </div>
+
+        {/* Mobile Menu */}
+        {mobileOpen && (
+          <div className="pb-4 lg:hidden">
+            <div className="space-y-2 rounded-2xl border border-white/10 bg-slate-900 p-4">
+              <Link onClick={closeMenus} className="block py-2" to="/">
+                Home
+              </Link>
+
+              <div>
+                <button
+                  onClick={() => setToolsOpen(!toolsOpen)}
+                  className="flex w-full items-center justify-between py-2"
+                >
+                  Word Tools
+                  <ChevronDown
+                    className={`h-4 w-4 transition ${
+                      toolsOpen ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
+
+                {toolsOpen && (
+                  <div className="ml-4 mt-2 space-y-2 border-l border-cyan-500/30 pl-4">
+                    <Link onClick={closeMenus} className="block py-1" to="/5-letter-words">
+                      5 Letter Words
+                    </Link>
+
+                    <Link onClick={closeMenus} className="block py-1" to="/words-starting-with">
+                      Words Starting With
+                    </Link>
+
+                    <Link onClick={closeMenus} className="block py-1" to="/words-ending-with">
+                      Words Ending With
+                    </Link>
+
+                    <Link onClick={closeMenus} className="block py-1" to="/word-length">
+                      Word Length
+                    </Link>
+
+                    <Link onClick={closeMenus} className="block py-1" to="/letter-combinations">
+                      Letter Combinations
+                    </Link>
+                  </div>
+                )}
               </div>
-            )}
+
+              <Link onClick={closeMenus} className="block py-2" to="/about">
+                About
+              </Link>
+
+              <Link onClick={closeMenus} className="block py-2" to="/contact">
+                Contact
+              </Link>
+
+              <Link onClick={closeMenus} className="block py-2" to="/privacy-policy">
+                Privacy Policy
+              </Link>
+
+              <Link onClick={closeMenus} className="block py-2" to="/terms-and-conditions">
+                Terms & Conditions
+              </Link>
+
+              <Link onClick={closeMenus} className="block py-2" to="/sitemap">
+                Sitemap
+              </Link>
+            </div>
           </div>
-
-          <Link onClick={closeMenu} className="transition hover:text-cyan-300" to="/about">
-            About
-          </Link>
-
-          <Link onClick={closeMenu} className="transition hover:text-cyan-300" to="/privacy-policy">
-            Privacy
-          </Link>
-
-          <Link onClick={closeMenu} className="transition hover:text-cyan-300" to="/terms-and-conditions">
-            Terms
-          </Link>
-
-          <Link onClick={closeMenu} className="transition hover:text-cyan-300" to="/contact">
-            Contact
-          </Link>
-
-          <Link onClick={closeMenu} className="transition hover:text-cyan-300" to="/sitemap">
-            Sitemap
-          </Link>
-        </nav>
+        )}
       </div>
     </header>
   );
