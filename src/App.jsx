@@ -8,7 +8,9 @@ import TermsConditions from "./pages/TermsConditions";
 import SitemapPage from "./pages/SitemapPage";
 import FiveLetterWords from "./pages/FiveLetterWords";
 import WordsEndingWith from "./pages/WordsEndingWith";
+import WordsEndingWithing from "./pages/WordsEndingWithing.jsx";
 import WordsStartingWith from "./pages/WordsStartingWith";
+import WordsStartingWitha from "./pages/WordsStartingWitha.jsx/index.js";
 import WordLength from "./pages/WordLength";
 import LetterCombination from "./pages/LetterCombination";
 
@@ -21,7 +23,9 @@ export default function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/5-letter-words" element={<FiveLetterWords />} />
         <Route path="/words-starting-with" element={<WordsStartingWith />} />
+        <Route path="/words-starting-with-a" element={<WordsStartingWitha />} />
         <Route path="/words-ending-with" element={<WordsEndingWith />} />
+        <Route path="/words-ending-with-ing" element={<WordsEndingWithing />} />
         <Route path="/word-length" element={<WordLength />} />
         <Route path="/letter-combinations" element={<LetterCombination />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
