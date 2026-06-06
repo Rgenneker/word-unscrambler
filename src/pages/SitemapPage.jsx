@@ -1,12 +1,10 @@
 import { Link } from "react-router-dom";
-import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 export default function SitemapPage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white">
-        <Navbar />
-
+        
         <div className="p-10">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-5xl font-black text-cyan-300">Website Sitemap</h1>

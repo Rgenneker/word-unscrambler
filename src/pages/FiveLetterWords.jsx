@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 const wordPool = {
@@ -59,8 +58,7 @@ export default function FiveLetterWords() {
 
   return (
     <main className="min-h-screen bg-slate-950 text-white">
-      <Navbar />
-
+      
       <div className="p-10">
         <div className="mx-auto max-w-7xl">
 

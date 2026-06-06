@@ -1,6 +1,5 @@
 import { useMemo, useState } from "react";
 import englishWords from "an-array-of-english-words";
-import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 function shuffle(words) {
@@ -19,8 +18,7 @@ export default function WordLength() {
 
   return (
     <main className="min-h-screen bg-slate-950 text-white">
-      <Navbar />
-
+      
       <div className="px-6 py-12">
         <div className="mx-auto max-w-7xl">
           <div className="text-center">

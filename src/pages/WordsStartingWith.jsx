@@ -1,6 +1,5 @@
 import { useMemo, useState } from "react";
 import englishWords from "an-array-of-english-words";
-import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 function shuffleWords(words) {
@@ -29,9 +28,7 @@ export default function WordsStartingWith() {
 
   return (
     <main className="min-h-screen bg-slate-950 text-white">
-      <Navbar />
-
-      <div className="px-6 py-12">
+            <div className="px-6 py-12">
         <div className="mx-auto max-w-7xl">
           <div className="text-center">
             <h1 className="text-5xl font-black text-cyan-300">

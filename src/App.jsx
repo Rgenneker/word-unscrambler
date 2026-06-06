@@ -1,4 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ScrollToTop from "./components/ScrollToTop"; // 
+import Navbar from "./components/Navbar";
 
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -17,6 +19,9 @@ import LetterCombination from "./pages/LetterCombination";
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop /> {/* This fixes the scroll behavior for all links instantly */}
+      <Navbar />
+      
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
