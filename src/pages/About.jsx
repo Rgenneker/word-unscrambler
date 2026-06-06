@@ -32,7 +32,7 @@ export default function About() {
         </div>
       </div>
       </div>
-      import Footer from "../components/Footer";
+      <Footer />
     </main>
   );
 }

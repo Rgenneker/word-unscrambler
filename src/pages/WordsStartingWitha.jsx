@@ -107,7 +107,7 @@ export default function WordsStartingWithA() {
           </div>
         </div>
       </div>
-      import Footer from "../components/Footer";
+      <Footer />
     </main>
   );
 }

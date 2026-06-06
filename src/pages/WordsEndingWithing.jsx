@@ -116,7 +116,7 @@ export default function WordsEndingWithing() {
           </div>
         </div>
       </div>
-      import Footer from "../components/Footer";
+      <Footer />
     </main>
   );
 }

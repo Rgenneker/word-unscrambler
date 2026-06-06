@@ -54,7 +54,7 @@ export default function SitemapPage() {
 </div>
       </div>
       </div>
-      import Footer from "../components/Footer";
+      <Footer />
     </main>
   );
 }

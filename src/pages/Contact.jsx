@@ -34,7 +34,7 @@ export default function Contact() {
         </div>
       </div>
       </div>
-      import Footer from "../components/Footer";
+      <Footer />
     </main>
   );
 }

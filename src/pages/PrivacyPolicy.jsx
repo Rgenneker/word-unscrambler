@@ -253,7 +253,7 @@ export default function PrivacyPolicy() {
         </div>
       </div>
       </div>
-      import Footer from "../components/Footer";
+      <Footer />
     </main>
   );
 }

@@ -68,7 +68,7 @@ export default function WordLength() {
           </div>
         </div>
       </div>
-      import Footer from "../components/Footer";
+      <Footer />
     </main>
   );
 }

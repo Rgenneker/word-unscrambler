@@ -119,7 +119,7 @@ export default function FiveLetterWords() {
 
         </div>
       </div>
-      import Footer from "../components/Footer";
+      <Footer />
     </main>
   );
 }
