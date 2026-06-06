@@ -1,10 +1,25 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [toolsOpen, setToolsOpen] = useState(false);
+  const menuRef = useRef(null);
+
+  useEffect(() => {
+  function handleClickOutside(event) {
+    if (menuRef.current && !menuRef.current.contains(event.target)) {
+      setToolsOpen(false);
+    }
+  }
+
+  document.addEventListener("mousedown", handleClickOutside);
+
+  return () => {
+    document.removeEventListener("mousedown", handleClickOutside);
+  };
+}, []);
 
   const closeMenus = () => {
     setMobileOpen(false);
@@ -29,7 +44,7 @@ export default function Navbar() {
               Home
             </Link>
 
-            <div className="relative">
+            <div ref={menuRef} className="relative">
               <button
                 onClick={() => setToolsOpen(!toolsOpen)}
                 className="flex items-center gap-2 hover:text-cyan-300"

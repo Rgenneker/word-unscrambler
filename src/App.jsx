@@ -8,9 +8,9 @@ import TermsConditions from "./pages/TermsConditions";
 import SitemapPage from "./pages/SitemapPage";
 import FiveLetterWords from "./pages/FiveLetterWords";
 import WordsEndingWith from "./pages/WordsEndingWith";
-import WordsEndingWithing from "./pages/WordsEndingWithing.jsx";
+import WordsEndingWithing from "./pages/WordsEndingWithing";
 import WordsStartingWith from "./pages/WordsStartingWith";
-import WordsStartingWitha from "./pages/WordsStartingWitha.jsx/index.js";
+import WordsStartingWitha from "./pages/WordsStartingWitha";
 import WordLength from "./pages/WordLength";
 import LetterCombination from "./pages/LetterCombination";
 
