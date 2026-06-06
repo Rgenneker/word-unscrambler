@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Analytics } from '@vercel/analytics/react';
 import ScrollToTop from "./components/ScrollToTop"; // 
 import Navbar from "./components/Navbar";
 
@@ -37,6 +38,7 @@ export default function App() {
         <Route path="/terms-and-conditions" element={<TermsConditions />} />
         <Route path="/sitemap" element={<SitemapPage />} />
       </Routes>
+      <Analytics />
     </BrowserRouter>
   );
 }
