@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const wordPool = {
   A: ["apple", "angel", "adore", "alive", "arena", "arrow", "agent", "amuse"],
@@ -118,6 +119,7 @@ export default function FiveLetterWords() {
 
         </div>
       </div>
+      import Footer from "../components/Footer";
     </main>
   );
 }

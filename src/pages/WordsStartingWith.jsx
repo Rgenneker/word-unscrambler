@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import englishWords from "an-array-of-english-words";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 function shuffleWords(words) {
   return [...words].sort(() => 0.5 - Math.random());
@@ -107,6 +108,7 @@ export default function WordsStartingWith() {
           </div>
         </div>
       </div>
+      import Footer from "../components/Footer";
     </main>
   );
 }

@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import englishWords from "an-array-of-english-words";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 function clean(value) {
   return value.toLowerCase().replace(/[^a-z]/g, "");
@@ -88,6 +89,7 @@ export default function LetterCombination() {
           </div>
         </div>
       </div>
+      import Footer from "../components/Footer";
     </main>
   );
 }

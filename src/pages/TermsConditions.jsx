@@ -1,4 +1,5 @@
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 export default function TermsConditions() {
   return (
@@ -233,6 +234,7 @@ export default function TermsConditions() {
         </div>
       </div>
       </div>
+      import Footer from "../components/Footer";
     </main>
   );
 }
