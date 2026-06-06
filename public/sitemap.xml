@@ -5,15 +5,54 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://wordshuffl.com/about</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://wordshuffl.com/contact</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://wordshuffl.com/5-letter-words</loc>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://wordshuffl.com/word-length</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://wordshuffl.com/letter-combinations</loc>
+    <priority>0.8</priority>
+  </url>
+
   <url>
     <loc>https://wordshuffl.com/words-starting-with</loc>
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://wordshuffl.com/words-starting-with-a</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://wordshuffl.com/words-ending-with</loc>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://wordshuffl.com/words-ending-with-ing</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://wordshuffl.com/privacy-policy</loc>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://wordshuffl.com/terms-and-conditions</loc>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://wordshuffl.com/sitemap</loc>
+    <priority>0.5</priority>
   </url>
 </urlset>
