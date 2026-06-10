@@ -1,3 +1,4 @@
+import PartnerLinks from "../components/PartnerLinks";
 import { useMemo, useState } from "react";
 import englishWords from "an-array-of-english-words";
 import Footer from "../components/Footer";
@@ -66,6 +67,7 @@ export default function WordLength() {
           </div>
         </div>
       </div>
+      <PartnerLinks />
       <Footer />
     </main>
   );

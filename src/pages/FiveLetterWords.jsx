@@ -1,3 +1,4 @@
+import PartnerLinks from "../components/PartnerLinks";
 import { useState } from "react";
 import Footer from "../components/Footer";
 
@@ -117,6 +118,7 @@ export default function FiveLetterWords() {
 
         </div>
       </div>
+      <PartnerLinks />
       <Footer />
     </main>
   );
