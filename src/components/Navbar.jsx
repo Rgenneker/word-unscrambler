@@ -71,6 +71,14 @@ export default function Navbar() {
                     Words Ending With
                   </Link>
 
+                  <Link onClick={closeMenus} className="block rounded-xl px-4 py-3 hover:bg-cyan-400/10" to="/words-ending-with-ing">
+                   Words Ending With Ing
+                  </Link>
+
+                  <Link onClick={closeMenus} className="block rounded-xl px-4 py-3 hover:bg-cyan-400/10" to="/words-starting-with-a">
+                   Words Starting With A
+                  </Link>
+
                   <Link onClick={closeMenus} className="block rounded-xl px-4 py-3 hover:bg-cyan-400/10" to="/word-length">
                     Word Length
                   </Link>
@@ -131,6 +139,14 @@ export default function Navbar() {
 
                     <Link onClick={closeMenus} className="block py-1" to="/words-ending-with">
                       Words Ending With
+                    </Link>
+                    
+                    <Link onClick={closeMenus} className="block rounded-xl px-4 py-3 transition hover:bg-cyan-400/10 hover:text-cyan-300" to="/words-ending-with-ing">
+                     Words Ending With Ing
+                   </Link>
+
+                    <Link onClick={closeMenus} className="block rounded-xl px-4 py-3 transition hover:bg-cyan-400/10 hover:text-cyan-300" to="/words-starting-with-a">
+                     Words Starting With A
                     </Link>
 
                     <Link onClick={closeMenus} className="block py-1" to="/word-length">

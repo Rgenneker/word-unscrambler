@@ -34,8 +34,7 @@ export default function WordsEndingWithing() {
 
   return (
     <main className="min-h-screen bg-slate-950 text-white">
-      <Navbar />
-
+      
       <div className="px-6 py-12">
         <div className="mx-auto max-w-7xl">
           <div className="text-center">
