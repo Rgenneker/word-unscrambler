@@ -1,25 +1,10 @@
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [toolsOpen, setToolsOpen] = useState(false);
-  const menuRef = useRef(null);
-
-  useEffect(() => {
-  function handleClickOutside(event) {
-    if (menuRef.current && !menuRef.current.contains(event.target)) {
-      setToolsOpen(false);
-    }
-  }
-
-  document.addEventListener("mousedown", handleClickOutside);
-
-  return () => {
-    document.removeEventListener("mousedown", handleClickOutside);
-  };
-}, []);
 
   const closeMenus = () => {
     setMobileOpen(false);
@@ -30,62 +15,38 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 border-b border-white/10 bg-slate-950/95 backdrop-blur">
       <div className="mx-auto max-w-7xl px-4">
         <div className="flex items-center justify-between py-4">
-          <Link
-            to="/"
-            onClick={closeMenus}
-            className="text-2xl font-black text-cyan-300"
-          >
+          <Link to="/" onClick={closeMenus} className="text-xl font-black text-cyan-300 sm:text-2xl">
             WordShuffl
           </Link>
 
-          {/* Desktop Menu */}
-          <nav className="hidden items-center gap-6 text-sm font-medium text-slate-300 lg:flex">
-            <Link to="/" className="hover:text-cyan-300">
-              Home
-            </Link>
+          {/* Desktop */}
+          <nav className="hidden items-center gap-6 text-sm font-medium text-slate-300 xl:flex">
+            <Link to="/">Home</Link>
 
-            <div ref={menuRef} className="relative">
+            <div className="relative">
               <button
+                type="button"
                 onClick={() => setToolsOpen(!toolsOpen)}
                 className="flex items-center gap-2 hover:text-cyan-300"
               >
-                Word Tools
-                <ChevronDown
-                  className={`h-4 w-4 transition ${
-                    toolsOpen ? "rotate-180" : ""
-                  }`}
-                />
+                Word Tools <ChevronDown className="h-4 w-4" />
               </button>
 
               {toolsOpen && (
-                <div className="absolute left-0 mt-3 w-64 rounded-2xl border border-white/10 bg-slate-900 p-3 shadow-2xl">
-                  <Link onClick={closeMenus} className="block rounded-xl px-4 py-3 hover:bg-cyan-400/10" to="/5-letter-words">
-                    5 Letter Words
-                  </Link>
-
-                  <Link onClick={closeMenus} className="block rounded-xl px-4 py-3 hover:bg-cyan-400/10" to="/words-starting-with">
-                    Words Starting With
-                  </Link>
-
-                  <Link onClick={closeMenus} className="block rounded-xl px-4 py-3 hover:bg-cyan-400/10" to="/words-ending-with">
-                    Words Ending With
-                  </Link>
-
-                  <Link onClick={closeMenus} className="block rounded-xl px-4 py-3 hover:bg-cyan-400/10" to="/words-ending-with-ing">
-                   Words Ending With Ing
-                  </Link>
-
-                  <Link onClick={closeMenus} className="block rounded-xl px-4 py-3 hover:bg-cyan-400/10" to="/words-starting-with-a">
-                   Words Starting With A
-                  </Link>
-
-                  <Link onClick={closeMenus} className="block rounded-xl px-4 py-3 hover:bg-cyan-400/10" to="/word-length">
-                    Word Length
-                  </Link>
-
-                  <Link onClick={closeMenus} className="block rounded-xl px-4 py-3 hover:bg-cyan-400/10" to="/letter-combinations">
-                    Letter Combinations
-                  </Link>
+                <div className="absolute left-0 top-full mt-3 w-72 rounded-2xl border border-white/10 bg-slate-900 p-3 shadow-2xl">
+                  {[
+                    ["5 Letter Words", "/5-letter-words"],
+                    ["Words Starting With", "/words-starting-with"],
+                    ["Words Ending With", "/words-ending-with"],
+                    ["Words Ending With Ing", "/words-ending-with-ing"],
+                    ["Words Starting With A", "/words-starting-with-a"],
+                    ["Word Length", "/word-length"],
+                    ["Letter Combinations", "/letter-combinations"],
+                  ].map(([label, path]) => (
+                    <Link key={path} onClick={closeMenus} to={path} className="block rounded-xl px-4 py-3 hover:bg-cyan-400/10 hover:text-cyan-300">
+                      {label}
+                    </Link>
+                  ))}
                 </div>
               )}
             </div>
@@ -97,88 +58,56 @@ export default function Navbar() {
             <Link to="/sitemap">Sitemap</Link>
           </nav>
 
-          {/* Mobile Button */}
+          {/* Mobile button */}
           <button
+            type="button"
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden text-cyan-300"
+            className="xl:hidden text-cyan-300"
           >
             {mobileOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile menu */}
         {mobileOpen && (
-          <div className="pb-4 lg:hidden">
-            <div className="space-y-2 rounded-2xl border border-white/10 bg-slate-900 p-4">
-              <Link onClick={closeMenus} className="block py-2" to="/">
+          <div className="pb-4 xl:hidden">
+            <div className="max-h-[80vh] overflow-y-auto rounded-2xl border border-white/10 bg-slate-900 p-4 text-slate-200">
+              <Link onClick={closeMenus} className="block rounded-xl px-4 py-3 hover:bg-cyan-400/10" to="/">
                 Home
               </Link>
 
-              <div>
-                <button
-                  onClick={() => setToolsOpen(!toolsOpen)}
-                  className="flex w-full items-center justify-between py-2"
-                >
-                  Word Tools
-                  <ChevronDown
-                    className={`h-4 w-4 transition ${
-                      toolsOpen ? "rotate-180" : ""
-                    }`}
-                  />
-                </button>
+              <button
+                type="button"
+                onClick={() => setToolsOpen(!toolsOpen)}
+                className="flex w-full items-center justify-between rounded-xl px-4 py-3 hover:bg-cyan-400/10"
+              >
+                Word Tools
+                <ChevronDown className={`h-4 w-4 transition ${toolsOpen ? "rotate-180" : ""}`} />
+              </button>
 
-                {toolsOpen && (
-                  <div className="ml-4 mt-2 space-y-2 border-l border-cyan-500/30 pl-4">
-                    <Link onClick={closeMenus} className="block py-1" to="/5-letter-words">
-                      5 Letter Words
+              {toolsOpen && (
+                <div className="mt-2 space-y-1 rounded-2xl bg-slate-950/60 p-2">
+                  {[
+                    ["5 Letter Words", "/5-letter-words"],
+                    ["Words Starting With", "/words-starting-with"],
+                    ["Words Ending With", "/words-ending-with"],
+                    ["Words Ending With Ing", "/words-ending-with-ing"],
+                    ["Words Starting With A", "/words-starting-with-a"],
+                    ["Word Length", "/word-length"],
+                    ["Letter Combinations", "/letter-combinations"],
+                  ].map(([label, path]) => (
+                    <Link key={path} onClick={closeMenus} to={path} className="block rounded-xl px-4 py-3 text-sm hover:bg-cyan-400/10 hover:text-cyan-300">
+                      {label}
                     </Link>
+                  ))}
+                </div>
+              )}
 
-                    <Link onClick={closeMenus} className="block py-1" to="/words-starting-with">
-                      Words Starting With
-                    </Link>
-
-                    <Link onClick={closeMenus} className="block py-1" to="/words-ending-with">
-                      Words Ending With
-                    </Link>
-                    
-                    <Link onClick={closeMenus} className="block rounded-xl px-4 py-3 transition hover:bg-cyan-400/10 hover:text-cyan-300" to="/words-ending-with-ing">
-                     Words Ending With Ing
-                   </Link>
-
-                    <Link onClick={closeMenus} className="block rounded-xl px-4 py-3 transition hover:bg-cyan-400/10 hover:text-cyan-300" to="/words-starting-with-a">
-                     Words Starting With A
-                    </Link>
-
-                    <Link onClick={closeMenus} className="block py-1" to="/word-length">
-                      Word Length
-                    </Link>
-
-                    <Link onClick={closeMenus} className="block py-1" to="/letter-combinations">
-                      Letter Combinations
-                    </Link>
-                  </div>
-                )}
-              </div>
-
-              <Link onClick={closeMenus} className="block py-2" to="/about">
-                About
-              </Link>
-
-              <Link onClick={closeMenus} className="block py-2" to="/contact">
-                Contact
-              </Link>
-
-              <Link onClick={closeMenus} className="block py-2" to="/privacy-policy">
-                Privacy Policy
-              </Link>
-
-              <Link onClick={closeMenus} className="block py-2" to="/terms-and-conditions">
-                Terms & Conditions
-              </Link>
-
-              <Link onClick={closeMenus} className="block py-2" to="/sitemap">
-                Sitemap
-              </Link>
+              <Link onClick={closeMenus} className="block rounded-xl px-4 py-3 hover:bg-cyan-400/10" to="/about">About</Link>
+              <Link onClick={closeMenus} className="block rounded-xl px-4 py-3 hover:bg-cyan-400/10" to="/contact">Contact</Link>
+              <Link onClick={closeMenus} className="block rounded-xl px-4 py-3 hover:bg-cyan-400/10" to="/privacy-policy">Privacy</Link>
+              <Link onClick={closeMenus} className="block rounded-xl px-4 py-3 hover:bg-cyan-400/10" to="/terms-and-conditions">Terms</Link>
+              <Link onClick={closeMenus} className="block rounded-xl px-4 py-3 hover:bg-cyan-400/10" to="/sitemap">Sitemap</Link>
             </div>
           </div>
         )}
