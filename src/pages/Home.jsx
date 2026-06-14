@@ -1,3 +1,4 @@
+import ResultsAd from "../components/ResultsAd";
 import Footer from "../components/Footer";
 import React, { useMemo, useState } from "react";
 import englishWords from "an-array-of-english-words";
@@ -561,7 +562,9 @@ export default function Home() {
             )}
           </div>
         </section>
-
+<div className="mt-6 flex justify-center">
+  <ResultsAd />
+</div>
         <section className="mt-10 grid gap-4 sm:grid-cols-3">
           <div className="rounded-3xl border border-white/10 bg-slate-900/50 p-5">
             <p className="font-bold text-slate-100">Score ranked</p>

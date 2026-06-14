@@ -1,3 +1,4 @@
+import SocialBar from "./components/SocialBar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop"; // 
 import Navbar from "./components/Navbar";
@@ -37,6 +38,7 @@ export default function App() {
         <Route path="/terms-and-conditions" element={<TermsConditions />} />
         <Route path="/sitemap" element={<SitemapPage />} />
       </Routes>
+      <SocialBar />
     </BrowserRouter>
   );
 }
