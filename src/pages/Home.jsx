@@ -317,7 +317,7 @@ export default function Home() {
                   </button>
                 </div>
               </div>
-return (
+
   <div className="min-h-screen bg-gray-100"></div>
     {/* Top Banner */}
     <AdUnit320x50  />
