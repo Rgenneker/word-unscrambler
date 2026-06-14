@@ -317,7 +317,14 @@ export default function Home() {
                   </button>
                 </div>
               </div>
+return (
+  <div className="min-h-screen bg-gray-100"></div>
+    {/* Top Banner */}
+    <AdUnit320x50  />
 
+    {/* Social Bar (renders implicitly via document.body injection) */}
+    <AdUnitSocialBar />
+ 
               {showOptions && (
                 <div className="mt-5 rounded-3xl border border-white/10 bg-slate-950/50 p-4">
                   <div className="mb-4 flex items-center justify-between gap-3">
