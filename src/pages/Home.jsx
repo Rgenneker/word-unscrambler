@@ -318,12 +318,26 @@ export default function Home() {
                 </div>
               </div>
 
-  <div className="min-h-screen bg-gray-100"></div>
-    {/* Top Banner */}
-    <AdUnit320x50  />
+  <div className="min-h-screen bg-slate-950 text-white p-4">
 
-    {/* Social Bar (renders implicitly via document.body injection) */}
-    <AdUnitSocialBar />
+{/* Top Banner Ad Container */}
+<div className="w-full flex justify-center my-4 min-h-[50px]">
+<AdUnitBottom320x50 />
+</div>
+
+{/* Main App Layout */}
+<div className="max-w-4xl mx-auto mt-8">
+<h1 className="text-xl font-bold mb-2">Enter your letters</h1>
+
+{/* Your Search Input, Buttons, and Options sit here naturally /}
+{/ Make sure there are no loose "return (" text strings hiding here! */}
+</div>
+
+{/* Social Bar (fires tracking script invisibly in the DOM background) */}
+<AdUnitSocialBar />
+
+</div>
+
  
               {showOptions && (
                 <div className="mt-5 rounded-3xl border border-white/10 bg-slate-950/50 p-4">
