@@ -1,4 +1,3 @@
-import AdUnit320x50 from "../components/AdUnit320x50";
 import Footer from "../components/Footer";
 import React, { useMemo, useState } from "react";
 import englishWords from "an-array-of-english-words";
@@ -99,7 +98,6 @@ function vowelFilterMatches(word, filter) {
 
   return true;
 }
-<AdUnit320x50 />
 const DICTIONARY = englishWords
   .filter((word) => /^[a-z]+$/.test(word) && word.length >= 2)
   .map((word) => ({
@@ -191,18 +189,6 @@ export default function Home() {
       setLoadingDefinition("");
     }
   }
-{/* Top Banner Ad Container */}
-<div className="w-full flex justify-center my-4 min-h-[50px]">
-<AdUnit320x50 />
-</div>
-
-{/* Main App Layout */}
-<div className="max-w-4xl mx-auto mt-8">
-<h1 className="text-xl font-bold mb-2">Smart Word Unscrambler</h1>
-
-{/* Your Search Input, Buttons, and Options sit here naturally /}
-{/ Make sure there are no loose "return (" text strings hiding here! */}
-</div>
 
   function generateWords() {
     setHasSearched(true);
