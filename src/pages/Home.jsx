@@ -191,6 +191,18 @@ export default function Home() {
       setLoadingDefinition("");
     }
   }
+{/* Top Banner Ad Container */}
+<div className="w-full flex justify-center my-4 min-h-[50px]">
+<AdUnit320x50 />
+</div>
+
+{/* Main App Layout */}
+<div className="max-w-4xl mx-auto mt-8">
+<h1 className="text-xl font-bold mb-2">Smart Word Unscrambler</h1>
+
+{/* Your Search Input, Buttons, and Options sit here naturally /}
+{/ Make sure there are no loose "return (" text strings hiding here! */}
+</div>
 
   function generateWords() {
     setHasSearched(true);
@@ -554,18 +566,6 @@ export default function Home() {
         ? "Loading definition..."
         : "Hover or tap to load definition."}
   </p>
-</div>
-{/* Top Banner Ad Container */}
-<div className="w-full flex justify-center my-4 min-h-[50px]">
-<AdUnit320x50 />
-</div>
-
-{/* Main App Layout */}
-<div className="max-w-4xl mx-auto mt-8">
-<h1 className="text-xl font-bold mb-2">Smart Word Unscrambler</h1>
-
-{/* Your Search Input, Buttons, and Options sit here naturally /}
-{/ Make sure there are no loose "return (" text strings hiding here! */}
 </div>
 
                     </div>
