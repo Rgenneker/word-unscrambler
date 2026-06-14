@@ -322,7 +322,7 @@ export default function Home() {
 
 {/* Top Banner Ad Container */}
 <div className="w-full flex justify-center my-4 min-h-[50px]">
-<AdUnitBottom320x50 />
+<AdUnit320x50 />
 </div>
 
 {/* Main App Layout */}
@@ -337,7 +337,6 @@ export default function Home() {
 <AdUnitSocialBar />
 
 </div>
-
  
               {showOptions && (
                 <div className="mt-5 rounded-3xl border border-white/10 bg-slate-950/50 p-4">
