@@ -1,5 +1,5 @@
-import AdUnit300x250 from "../components/AdUnit300x250";
 import AdUnit320x50 from "../components/AdUnit320x50";
+import AdUnitSocialBar from "../components/AdUnitSocialBar";
 import Footer from "../components/Footer";
 import React, { useMemo, useState } from "react";
 import englishWords from "an-array-of-english-words";
@@ -107,7 +107,7 @@ const DICTIONARY = englishWords
     word,
     score: getScore(word)
   }));
-
+<AdUnitSocialBar />
 export default function Home() {
   const [letters, setLetters] = useState("");
   const [hasSearched, setHasSearched] = useState(false);
@@ -449,7 +449,7 @@ export default function Home() {
       WordPlay
     </a>
   </div>
-  <Adunit300x250 />
+  
 </section>
             </div>
           </div>
