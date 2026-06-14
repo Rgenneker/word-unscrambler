@@ -246,7 +246,7 @@ export default function Home() {
               <p className="text-xs text-slate-400">Smart word unscrambler</p>
             </div>
           </div>
-           <div className="min-h-screen bg-slate-950 text-white p-4">
+           <div className="bg-slate-950 text-white p-4">
 
 </div>
           <div className="hidden rounded-full border border-white/10 bg-slate-900/50 px-4 py-2 text-sm text-slate-200 sm:block">
