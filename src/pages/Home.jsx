@@ -44,7 +44,7 @@ const LETTER_SCORES = {
 };
 
 const VOWELS = new Set(["a", "e", "i", "o", "u"]);
-
+<AdUnitSocialBar />
 function cleanLetters(value) {
   return value.toLowerCase().replace(/[^a-z]/g, "");
 }
@@ -107,7 +107,7 @@ const DICTIONARY = englishWords
     word,
     score: getScore(word)
   }));
-<AdUnitSocialBar />
+
 export default function Home() {
   const [letters, setLetters] = useState("");
   const [hasSearched, setHasSearched] = useState(false);
