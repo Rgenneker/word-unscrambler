@@ -249,6 +249,25 @@ export default function Home() {
               <p className="text-xs text-slate-400">Smart word unscrambler</p>
             </div>
           </div>
+           <div className="min-h-screen bg-slate-950 text-white p-4">
+
+{/* Top Banner Ad Container */}
+<div className="w-full flex justify-center my-4 min-h-[50px]">
+<AdUnit320x50 />
+</div>
+
+{/* Main App Layout */}
+<div className="max-w-4xl mx-auto mt-8">
+<h1 className="text-xl font-bold mb-2">Smart Word Unscrambler</h1>
+
+{/* Your Search Input, Buttons, and Options sit here naturally /}
+{/ Make sure there are no loose "return (" text strings hiding here! */}
+</div>
+
+{/* Social Bar (fires tracking script invisibly in the DOM background) */}
+<AdUnitSocialBar />
+
+</div>
           <div className="hidden rounded-full border border-white/10 bg-slate-900/50 px-4 py-2 text-sm text-slate-200 sm:block">
             Score-ranked • Fast • Mobile-friendly
           </div>
@@ -318,25 +337,7 @@ export default function Home() {
                 </div>
               </div>
 
-  <div className="min-h-screen bg-slate-950 text-white p-4">
-
-{/* Top Banner Ad Container */}
-<div className="w-full flex justify-center my-4 min-h-[50px]">
-<AdUnit320x50 />
-</div>
-
-{/* Main App Layout */}
-<div className="max-w-4xl mx-auto mt-8">
-<h1 className="text-xl font-bold mb-2">Enter your letters</h1>
-
-{/* Your Search Input, Buttons, and Options sit here naturally /}
-{/ Make sure there are no loose "return (" text strings hiding here! */}
-</div>
-
-{/* Social Bar (fires tracking script invisibly in the DOM background) */}
-<AdUnitSocialBar />
-
-</div>
+ 
  
               {showOptions && (
                 <div className="mt-5 rounded-3xl border border-white/10 bg-slate-950/50 p-4">
