@@ -1,3 +1,6 @@
+import AdUnit300x250 from "../components/AdUnit300x250";
+import AdUnit320x50 from "../components/AdUnit320x50";
+import AdUnitSocialBar from "../components/AdUnitSocialBar";
 import Footer from "../components/Footer";
 import React, { useMemo, useState } from "react";
 import englishWords from "an-array-of-english-words";
@@ -98,7 +101,7 @@ function vowelFilterMatches(word, filter) {
 
   return true;
 }
-
+<AdUnit320x50 />
 const DICTIONARY = englishWords
   .filter((word) => /^[a-z]+$/.test(word) && word.length >= 2)
   .map((word) => ({
@@ -163,6 +166,7 @@ export default function Home() {
     wordLength,
     vowelFilter
   ]);
+<AdUnitSocialBar />
 
   const totalPoints = useMemo(() => {
     return results.reduce((total, item) => total + item.score, 0);
@@ -447,6 +451,7 @@ export default function Home() {
       WordPlay
     </a>
   </div>
+  <Adunit300x250 />
 </section>
             </div>
           </div>
