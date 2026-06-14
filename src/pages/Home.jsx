@@ -250,19 +250,6 @@ export default function Home() {
           </div>
            <div className="min-h-screen bg-slate-950 text-white p-4">
 
-{/* Top Banner Ad Container */}
-<div className="w-full flex justify-center my-4 min-h-[50px]">
-<AdUnit320x50 />
-</div>
-
-{/* Main App Layout */}
-<div className="max-w-4xl mx-auto mt-8">
-<h1 className="text-xl font-bold mb-2">Smart Word Unscrambler</h1>
-
-{/* Your Search Input, Buttons, and Options sit here naturally /}
-{/ Make sure there are no loose "return (" text strings hiding here! */}
-</div>
-
 </div>
           <div className="hidden rounded-full border border-white/10 bg-slate-900/50 px-4 py-2 text-sm text-slate-200 sm:block">
             Score-ranked • Fast • Mobile-friendly
@@ -568,6 +555,19 @@ export default function Home() {
         : "Hover or tap to load definition."}
   </p>
 </div>
+{/* Top Banner Ad Container */}
+<div className="w-full flex justify-center my-4 min-h-[50px]">
+<AdUnit320x50 />
+</div>
+
+{/* Main App Layout */}
+<div className="max-w-4xl mx-auto mt-8">
+<h1 className="text-xl font-bold mb-2">Smart Word Unscrambler</h1>
+
+{/* Your Search Input, Buttons, and Options sit here naturally /}
+{/ Make sure there are no loose "return (" text strings hiding here! */}
+</div>
+
                     </div>
                   ))}
                 </div>
