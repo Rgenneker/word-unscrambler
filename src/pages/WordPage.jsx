@@ -1,12 +1,17 @@
 import { useParams, Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import words from "an-array-of-english-words";
+import dictionary from "../data/dictionary.json";
 
 export default function WordPage() {
   const { word } = useParams();
   const cleanWord = word.toLowerCase();
 
   const exists = words.includes(cleanWord);
+
+const entry = dictionary.find(
+  (item) => item.word?.toLowerCase() === cleanWord
+);
 
   if (!exists) {
     return (
@@ -54,8 +59,8 @@ export default function WordPage() {
   </h2>
 
   <p>
-    Definition for "{word}" will be added in a future update.
-  </p>
+  {entry?.definition || `Definition for "${word}" will be added in a future update.`}
+</p>
 </section>
 
         {word && (
