@@ -8,8 +8,9 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "generate:words": "node scripts/generate-word-pages.cjs" ,
-    "generate:sitemap": "node scripts/generate-sitemap.cjs" 
+    "generate:words": "node scripts/generate-word-pages.cjs",
+    "generate:sitemap": "node scripts/generate-sitemap.cjs" ,
+    "generate:definitions": "node scripts/generate-definitions.cjs"  
   },
   "dependencies": {
     "an-array-of-english-words": "^2.0.0",
@@ -20,7 +21,8 @@
     "react-dom": "^19.2.6",
     "react-helmet-async": "^3.0.0",
     "react-router-dom": "^7.15.1",
-    "slugify": "^1.6.9"
+    "slugify": "^1.6.9",
+    "wordnet-db": "^3.1.14"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
