@@ -1,3 +1,4 @@
+import WordPage from "./pages/WordPage";
 import SocialBar from "./components/SocialBar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop"; // 
@@ -25,6 +26,7 @@ export default function App() {
       
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/word/:word" element={<WordPage />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/5-letter-words" element={<FiveLetterWords />} />
@@ -37,6 +39,7 @@ export default function App() {
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-and-conditions" element={<TermsConditions />} />
         <Route path="/sitemap" element={<SitemapPage />} />
+        <Route path="/word/:word" element={<WordPage />} />
       </Routes>
       <SocialBar />
     </BrowserRouter>
