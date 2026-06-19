@@ -1,3 +1,4 @@
+import RightSidebarAd from "../components/RightSidebarAd";
 import LeftSidebarAd from "../components/LeftSidebarAd";
 import ResultsAd from "../components/ResultsAd";
 import Footer from "../components/Footer";
@@ -237,6 +238,9 @@ export default function Home() {
     <main className="min-h-screen overflow-hidden bg-slate-950 text-slate-100">
       <div className="hidden xl:block fixed left-[40px] top-[180px] z-50 w-[160px] h-[600px]">
   <LeftSidebarAd />
+</div>
+<div className="hidden xl:block fixed right-[40px] top-[180px] z-50 w-[160px] h-[300px] border border-red-500">
+  <RightSidebarAd />
 </div>
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(34,211,238,0.22),transparent_35%),radial-gradient(circle_at_top_right,rgba(168,85,247,0.18),transparent_30%),linear-gradient(180deg,#020617,#0F172A)]" />
 
