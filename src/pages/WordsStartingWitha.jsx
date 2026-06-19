@@ -1,3 +1,4 @@
+import TopLeftAd from "../components/TopLeftAd";
 import PartnerLinks from "../components/PartnerLinks";
 import { useMemo, useState } from "react";
 import englishWords from "an-array-of-english-words";
@@ -30,8 +31,11 @@ export default function WordsStartingWithA() {
   }
 
   return (
+    
     <main className="min-h-screen bg-slate-950 text-white">
-      
+      <div className="fixed left-[30px] top-[90px] z-50 hidden xl:block">
+  <TopLeftAd />
+</div>
       <div className="px-6 py-12">
         <div className="mx-auto max-w-7xl">
           <div className="text-center">
