@@ -29,8 +29,8 @@ export default function LeftSidebarAd() {
   }, []);
 
   return (
-    <div className="fixed left-[40px] top-[180px] z-50 w-[160px] h-[600px] border border-red-500">
-  <LeftSidebarAd />
-</div>
+    <div className="w-[160px] h-[600px] overflow-hidden">
+      <div ref={adRef} />
+    </div>
   );
 }
