@@ -1,3 +1,4 @@
+import LeftSidebarAd from "../components/LeftSidebarAd";
 import ResultsAd from "../components/ResultsAd";
 import Footer from "../components/Footer";
 import React, { useMemo, useState } from "react";
@@ -234,6 +235,9 @@ export default function Home() {
 
   return (
     <main className="min-h-screen overflow-hidden bg-slate-950 text-slate-100">
+      <div className="hidden xl:block fixed left-[40px] top-[180px] z-50 w-[160px] h-[600px]">
+  <LeftSidebarAd />
+</div>
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(34,211,238,0.22),transparent_35%),radial-gradient(circle_at_top_right,rgba(168,85,247,0.18),transparent_30%),linear-gradient(180deg,#020617,#0F172A)]" />
 
       <div className="relative mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
@@ -511,7 +515,9 @@ export default function Home() {
                 </div>
               </div>
             )}
-
+<div className="mt-6 flex justify-center">
+  <ResultsAd />
+</div>
             {hasSearched && availableLetters.length < 2 && (
               <div className="rounded-3xl border border-amber-300/20 bg-amber-300/10 p-6 text-amber-100">
                 Please enter at least two letters.
@@ -562,9 +568,7 @@ export default function Home() {
             )}
           </div>
         </section>
-<div className="mt-6 flex justify-center">
-  <ResultsAd />
-</div>
+
         <section className="mt-10 grid gap-4 sm:grid-cols-3">
           <div className="rounded-3xl border border-white/10 bg-slate-900/50 p-5">
             <p className="font-bold text-slate-100">Score ranked</p>
