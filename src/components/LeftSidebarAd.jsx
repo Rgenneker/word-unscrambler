@@ -17,20 +17,17 @@ export default function LeftSidebarAd() {
     };
 
     const script = document.createElement("script");
-    script.type = "text/javascript";
     script.src =
       "https://www.highperformanceformat.com/e5939d4d819acd28bbb6d673a68887d4/invoke.js";
+    script.type = "text/javascript";
+    script.async = true;
 
     adRef.current.appendChild(script);
-
-    return () => {
-      if (adRef.current) adRef.current.innerHTML = "";
-    };
   }, []);
 
   return (
-    <div className="bg-red-500 text-white p-4 w-[160px] h-[600px]">
-    LEFT AD LOADED
-  </div>
+    <div className="w-[160px] h-[600px] overflow-hidden">
+      <div ref={adRef} />
+    </div>
   );
 }
