@@ -8,25 +8,20 @@ export default function LeftSidebarAd() {
 
     adRef.current.innerHTML = "";
 
-    const optionsScript = document.createElement("script");
-    optionsScript.type = "text/javascript";
-    optionsScript.innerHTML = `
-      atOptions = {
-        'key' : 'e5939d4d819acd28bbb6d673a68887d4',
-        'format' : 'iframe',
-        'height' : 600,
-        'width' : 160,
-        'params' : {}
-      };
-    `;
+    window.atOptions = {
+      key: "e5939d4d819acd28bbb6d673a68887d4",
+      format: "iframe",
+      height: 600,
+      width: 160,
+      params: {},
+    };
 
-    const invokeScript = document.createElement("script");
-    invokeScript.type = "text/javascript";
-    invokeScript.src =
+    const script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src =
       "https://www.highperformanceformat.com/e5939d4d819acd28bbb6d673a68887d4/invoke.js";
 
-    adRef.current.appendChild(optionsScript);
-    adRef.current.appendChild(invokeScript);
+    adRef.current.appendChild(script);
 
     return () => {
       if (adRef.current) adRef.current.innerHTML = "";
@@ -34,9 +29,8 @@ export default function LeftSidebarAd() {
   }, []);
 
   return (
-    <div
-      ref={adRef}
-      className="w-[160px] min-h-[600px]"
-    />
+    <div className="w-[160px] h-[600px] overflow-hidden">
+      <div ref={adRef} />
+    </div>
   );
 }
