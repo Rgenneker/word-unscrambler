@@ -124651,6 +124651,16 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+   <url>
+    <loc>https://wordshuffl.com/word/granivores</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://wordshuffl.com/word/trihedrals</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://wordshuffl.com/word/zymurgy</loc>
     <changefreq>monthly</changefreq>
