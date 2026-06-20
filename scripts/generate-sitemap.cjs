@@ -1,62 +1,94 @@
-const fs = require("fs-extra");
-const path = require("path");
+const fs = require("fs");
 
-const words = require("an-array-of-english-words");
+const base = "https://wordshuffl.com";
 
-const SITE_URL = "https://wordshuffl.com";
-const MAX_URLS_PER_SITEMAP = 50000;
+const pages = [
+  "/",
+  "/about",
+  "/contact",
+  "/privacy-policy",
+  "/terms-and-conditions",
+  "/sitemap",
+  "/5-letter-words",
+  "/words-starting-with",
+  "/words-ending-with",
+  "/words-ending-with-ing",
+  "/words-starting-with-a",
+  "/word-length",
+  "/letter-combinations",
+  "/articles",
+];
 
-function createUrlBlock(word) {
-  const cleanWord = encodeURIComponent(word.toLowerCase());
+const articles = [
+  "best-5-letter-words-in-scrabble",
+  "how-to-win-at-wordle",
+  "common-english-prefixes",
+  "common-english-suffixes",
+  "100-powerful-vocabulary-words",
+  "best-crossword-solving-strategies",
+  "letter-frequency-in-english",
+  "scrabble-words-with-q",
+  "scrabble-words-with-x",
+  "scrabble-words-with-z",
+  "best-wordle-starting-words",
+  "five-letter-words-ending-in-e",
+  "five-letter-words-with-ai",
+  "words-ending-in-ing",
+  "words-starting-with-str",
+  "words-ending-in-tion",
+  "how-to-improve-vocabulary",
+  "anagrams-explained",
+  "how-to-solve-anagrams",
+  "english-root-words",
+  "vowels-and-consonants",
+  "spelling-practice-strategies",
+  "word-games-for-learning",
+  "best-words-for-crosswords",
+  "common-seven-letter-words",
+  "longest-english-words",
+  "difficult-wordle-answers",
+  "how-scrabble-scoring-works",
+  "wordle-pattern-strategy",
+  "crossword-clue-techniques",
+  "short-words-that-score-high",
+  "two-letter-scrabble-words",
+  "three-letter-scrabble-words",
+  "four-letter-word-strategy",
+  "five-letter-word-strategy",
+  "six-letter-word-strategy",
+  "seven-letter-word-strategy",
+  "word-patterns-for-games",
+  "prefixes-for-word-games",
+  "suffixes-for-word-games",
+  "how-to-build-better-words",
+  "daily-vocabulary-habits",
+  "spelling-bee-preparation",
+  "word-discovery-for-students",
+  "word-games-for-adults",
+  "crossword-solving-for-beginners",
+  "advanced-scrabble-strategy",
+  "advanced-wordle-strategy",
+  "english-language-word-formation",
+  "why-word-games-improve-language",
+];
 
-  return `
-  <url>
-    <loc>${SITE_URL}/word/${cleanWord}</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>`;
-}
+const urls = [
+  ...pages,
+  ...articles.map((slug) => `/articles/${slug}`),
+];
 
-async function generateSitemaps() {
-  const cleanWords = words.filter((word) => word && typeof word === "string");
-
-  const chunks = [];
-  for (let i = 0; i < cleanWords.length; i += MAX_URLS_PER_SITEMAP) {
-    chunks.push(cleanWords.slice(i, i + MAX_URLS_PER_SITEMAP));
-  }
-
-  for (let i = 0; i < chunks.length; i++) {
-    const urls = chunks[i].map(createUrlBlock).join("");
-
-    const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${urls}
-</urlset>`;
-
-    await fs.writeFile(
-      path.join(__dirname, `../public/sitemap-${i + 1}.xml`),
-      sitemap.trim()
-    );
-  }
-
-  const sitemapIndex = `<?xml version="1.0" encoding="UTF-8"?>
-<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${chunks
+${urls
   .map(
-    (_, i) => `
-  <sitemap>
-    <loc>${SITE_URL}/sitemap-${i + 1}.xml</loc>
-  </sitemap>`
+    (url) => `  <url>
+    <loc>${base}${url}</loc>
+    <priority>${url === "/" ? "1.0" : "0.8"}</priority>
+  </url>`
   )
-  .join("")}
-</sitemapindex>`;
+  .join("\n")}
+</urlset>
+`;
 
-  await fs.writeFile(
-    path.join(__dirname, "../public/sitemap-index.xml"),
-    sitemapIndex.trim()
-  );
-
-  console.log(`Generated ${chunks.length} sitemap files for ${cleanWords.length} word URLs.`);
-}
-
-generateSitemaps();
+fs.writeFileSync("public/sitemap.xml", sitemap);
+console.log(`Generated sitemap with ${urls.length} URLs`);

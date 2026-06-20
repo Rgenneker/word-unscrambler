@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://wordshuffl.com/sitemap.xml
+Sitemap: https://wordshuffl.com/sitemap-index.xml

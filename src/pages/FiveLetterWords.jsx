@@ -1,7 +1,13 @@
+import StructuredData from "../components/geo/StructuredData";
+import FAQSection from "../components/geo/FAQSection";
+import { fiveLetterWordsFaqs } from "../data/fiveLetterWordsFaqs";
+import HowToUseSection from "../components/geo/HowToUseSection";
+import VocabularyGuidance from "../components/geo/VocabularyGuidance";
+import InternalLinks from "../components/geo/InternalLinks";
+import { toolSeoContent } from "../data/toolSeoContent";
 import TopLeftAd from "../components/TopLeftAd";
 import PartnerLinks from "../components/PartnerLinks";
 import { useState } from "react";
-import Footer from "../components/Footer";
 
 const wordPool = {
   A: ["apple", "angel", "adore", "alive", "arena", "arrow", "agent", "amuse"],
@@ -29,7 +35,7 @@ const wordPool = {
   W: ["water", "world", "whale", "wrist", "woven", "watch", "worry", "wider"],
   X: ["xenon", "xylem", "xenic", "xerox", "xenial"],
   Y: ["young", "yield", "yearn", "yacht", "yummy", "yours", "youth", "yeast"],
-  Z: ["zebra", "zesty", "zonal", "zippy", "zooms", "zebra", "zincs", "zesty"],
+  Z: ["zebra", "zesty", "zonal", "zippy", "zooms", "zeros", "zincs", "zoned"],
 };
 
 function getRandomWords(words, count = 5) {
@@ -57,9 +63,75 @@ export default function FiveLetterWords() {
     setDisplayWords(generateWords());
     setRefreshKey((prev) => prev + 1);
   };
+  const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: fiveLetterWordsFaqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.answer,
+    },
+  })),
+};
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "5 Letter Words",
+  description:
+    "Discover 5 letter words for Wordle, Scrabble, crosswords, spelling practice and vocabulary building.",
+  url: "https://wordshuffl.com/5-letter-words",
+  isPartOf: {
+    "@type": "WebSite",
+    name: "WordShuffl",
+    url: "https://wordshuffl.com",
+  },
+};
+const webSiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "WordShuffl",
+  url: "https://wordshuffl.com",
+  description:
+    "WordShuffl helps users unscramble letters, discover English words, improve vocabulary, and support word games such as Scrabble, Wordle and crosswords.",
+};
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "WordShuffl",
+  url: "https://wordshuffl.com",
+  email: "support@wordshuffl.com",
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://wordshuffl.com/",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "5 Letter Words",
+      item: "https://wordshuffl.com/5-letter-words",
+    },
+  ],
+};
 
   return (
     <main className="min-h-screen bg-slate-950 text-white">
+      <StructuredData data={faqSchema} />
+<StructuredData data={webPageSchema} />
+<StructuredData data={webSiteSchema} />
+<StructuredData data={organizationSchema} />
+<StructuredData data={breadcrumbSchema} />
+       
       <div className="fixed left-[30px] top-[90px] z-50 hidden xl:block">
   <TopLeftAd />
 </div>
@@ -123,7 +195,25 @@ export default function FiveLetterWords() {
         </div>
       </div>
       <PartnerLinks />
-      <Footer />
-    </main>
+      <section className="mt-16 rounded-3xl border border-white/10 bg-slate-900/60 p-8">
+  <h2 className="text-3xl font-black text-cyan-300">
+    About 5 Letter Words
+  </h2>
+
+  <p className="mt-6 whitespace-pre-line leading-8 text-slate-300">
+    {toolSeoContent["five-letter-words"].intro}
+  </p>
+</section>
+
+<HowToUseSection title="How To Use The 5 Letter Words Tool">
+  <p>{toolSeoContent["five-letter-words"].howToUse}</p>
+</HowToUseSection>
+
+<VocabularyGuidance>
+  <p>{toolSeoContent["five-letter-words"].vocabularyGuidance}</p>
+</VocabularyGuidance>
+<FAQSection faqs={fiveLetterWordsFaqs} />
+<InternalLinks />
+          </main>
   );
 }

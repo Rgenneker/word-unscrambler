@@ -1,0 +1,75 @@
+# WordShuffl
+
+WordShuffl is a free online word discovery and word helper platform designed for word game enthusiasts, Scrabble players, Wordle players, crossword solvers, students, and vocabulary learners.
+
+Website:
+https://wordshuffl.com
+
+Primary Pages:
+https://wordshuffl.com/
+https://wordshuffl.com/5-letter-words
+https://wordshuffl.com/words-starting-with
+https://wordshuffl.com/words-ending-with
+https://wordshuffl.com/words-ending-with-ing
+https://wordshuffl.com/words-starting-with-a
+https://wordshuffl.com/word-length
+https://wordshuffl.com/letter-combinations
+https://wordshuffl.com/about
+https://wordshuffl.com/contact
+https://wordshuffl.com/privacy-policy
+https://wordshuffl.com/terms-and-conditions
+https://wordshuffl.com/sitemap
+
+Purpose:
+WordShuffl helps users discover words based on length, starting letters, ending letters, suffixes, prefixes, and letter combinations. The platform supports vocabulary development, word games, Scrabble strategy, Wordle solving, crossword assistance, spelling improvement, and educational language exploration.
+
+## Core Tools
+
+https://wordshuffl.com/5-letter-words
+https://wordshuffl.com/words-starting-with
+https://wordshuffl.com/words-ending-with
+https://wordshuffl.com/words-ending-with-ing
+https://wordshuffl.com/words-starting-with-a
+https://wordshuffl.com/word-length
+https://wordshuffl.com/letter-combinations
+https://wordshuffl.com/longest-english-words
+https://wordshuffl.com/common-7-letter-words
+https://wordshuffl.com/difficult-wordle-answers
+
+## Word Discovery Tools
+
+https://wordshuffl.com/unscrambler
+https://wordshuffl.com/anagram-solver
+https://wordshuffl.com/word-finder
+
+## Learning Resources
+
+https://wordshuffl.com/articles
+
+## Popular Articles
+
+https://wordshuffl.com/articles/best-5-letter-words-in-scrabble
+https://wordshuffl.com/articles/how-to-win-at-wordle
+https://wordshuffl.com/articles/common-english-prefixes
+https://wordshuffl.com/articles/common-english-suffixes
+https://wordshuffl.com/articles/100-powerful-vocabulary-words
+
+Related Sites:
+https://lexigenz.com
+https://trufflshuffl.com
+
+Content Categories:
+- Vocabulary Development
+- Word Games
+- Scrabble Tools
+- Wordle Assistance
+- Crossword Assistance
+- Letter Pattern Search
+- Educational Language Resources
+
+## Sitemap
+
+https://wordshuffl.com/sitemap-index.xml
+
+Last Updated:
+2026

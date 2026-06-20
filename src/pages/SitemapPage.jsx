@@ -59,6 +59,11 @@ export default function SitemapPage() {
   <Link className="block text-cyan-300 hover:underline" to="/letter-combinations">
     Letter Combinations
   </Link>
+
+  <Link className="block text-cyan-300 hover:underline"  to="/longest-english-words">Longest English Words</Link>
+<Link className="block text-cyan-300 hover:underline" to="/common-7-letter-words">Common 7 Letter Words</Link>
+<Link className="block text-cyan-300 hover:underline" to="/difficult-wordle-answers">Difficult Wordle Answers</Link>
+<Link className="block text-cyan-300 hover:underline" to="/articles">Articles</Link>
 </div>
       </div>
       </div>

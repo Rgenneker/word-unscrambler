@@ -1,8 +1,6 @@
 import TopLeftAd from "../components/TopLeftAd";
-import PartnerLinks from "../components/PartnerLinks";
 import { useMemo, useState } from "react";
 import englishWords from "an-array-of-english-words";
-import Footer from "../components/Footer";
 
 function shuffleWords(words) {
   return [...words].sort(() => 0.5 - Math.random());
@@ -111,8 +109,8 @@ export default function WordsEndingWith() {
           </div>
         </div>
       </div>
-      <PartnerLinks />
-      <Footer />
+      
+            
     </main>
   );
 }

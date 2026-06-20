@@ -1,8 +1,6 @@
 import TopLeftAd from "../components/TopLeftAd";
-import PartnerLinks from "../components/PartnerLinks";
 import { useMemo, useState } from "react";
 import englishWords from "an-array-of-english-words";
-import Footer from "../components/Footer";
 
 // A more reliable modern shuffle slice 
 function getShuffledWords(words, limit = 250) {
@@ -119,8 +117,7 @@ export default function WordsEndingWithing() {
           </div>
         </div>
       </div>
-      <PartnerLinks />
-      <Footer />
+                  
     </main>
   );
 }

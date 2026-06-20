@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="mt-16 border-t border-white/10 bg-slate-950 py-8 text-center">
+    <footer className="border-t border-white/10 bg-slate-950 py-8 text-center">
       <div className="mx-auto max-w-7xl px-6">
         <p className="text-sm text-slate-400">
           WordShuffl® is a registered trademark. All intellectual property

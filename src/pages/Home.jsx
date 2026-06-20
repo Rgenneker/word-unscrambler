@@ -1,3 +1,4 @@
+import { homepageContent } from "../data/homepageContent";
 import RightSidebarAd from "../components/RightSidebarAd";
 import LeftSidebarAd from "../components/LeftSidebarAd";
 import ResultsAd from "../components/ResultsAd";
@@ -572,6 +573,15 @@ export default function Home() {
             )}
           </div>
         </section>
+        <section className="mt-20 rounded-3xl border border-white/10 bg-slate-900/60 p-8">
+  <h2 className="text-3xl font-black text-cyan-300">
+    About WordShuffl
+  </h2>
+
+  <p className="mt-6 whitespace-pre-line leading-8 text-slate-300">
+    {homepageContent.content}
+  </p>
+</section>
 
         <section className="mt-10 grid gap-4 sm:grid-cols-3">
           <div className="rounded-3xl border border-white/10 bg-slate-900/50 p-5">

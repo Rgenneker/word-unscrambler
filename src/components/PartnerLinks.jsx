@@ -1,6 +1,6 @@
 export default function PartnerLinks() {
   return (
-    <div className="mt-12 rounded-3xl border border-cyan-400/20 bg-slate-900/60 p-8 text-center">
+    <div className="mt-0 rounded-3xl border border-cyan-400/20 bg-slate-900/60 p-8 text-center">
       <h3 className="mb-6 text-xl font-bold text-white">
         Explore More Helpful Tools
       </h3>

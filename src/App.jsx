@@ -1,8 +1,15 @@
+import LongestEnglishWords from "./pages/LongestEnglishWords";
+import CommonSevenLetterWords from "./pages/CommonSevenLetterWords";
+import DifficultWordleAnswers from "./pages/DifficultWordleAnswers";
+import Articles from "./pages/Articles";
+import ArticlePage from "./pages/ArticlePage";
+import ToolGeoRouter from "./components/geo/ToolGeoRouter";
 import WordPage from "./pages/WordPage";
 import SocialBar from "./components/SocialBar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop"; // 
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -40,7 +47,14 @@ export default function App() {
         <Route path="/terms-and-conditions" element={<TermsConditions />} />
         <Route path="/sitemap" element={<SitemapPage />} />
         <Route path="/word/:word" element={<WordPage />} />
+        <Route path="/articles" element={<Articles />} />
+<Route path="/articles/:slug" element={<ArticlePage />} />
+<Route path="/longest-english-words" element={<LongestEnglishWords />} />
+<Route path="/common-7-letter-words" element={<CommonSevenLetterWords />} />
+<Route path="/difficult-wordle-answers" element={<DifficultWordleAnswers />} />
       </Routes>
+      <ToolGeoRouter />
+      <Footer />
       <SocialBar />
     </BrowserRouter>
   );
