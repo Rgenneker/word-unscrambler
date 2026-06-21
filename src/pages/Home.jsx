@@ -598,24 +598,7 @@ export default function Home() {
           </div>
         </section>
       </div>
-      <footer className="border-t border-white/10 bg-slate-950 px-6 py-10 text-center text-sm text-slate-400">
-  <div className="mx-auto max-w-5xl space-y-4">
-
-    <p>
-      WordShuffl® is a registered trademark. All intellectual property rights
-      in and to the game are owned in South Africa by WordShuffl Trading.
-    </p>
-
-    <p>
-      This site is for entertainment and informational purposes only.
-    </p>
-
-    <p className="font-semibold text-slate-500">
-      © 2026 WordShuffl.com. ALL RIGHTS RESERVED
-    </p>
-
-  </div>
-</footer>
+  
     </main>
   );
 }

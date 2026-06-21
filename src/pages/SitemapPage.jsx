@@ -67,7 +67,7 @@ export default function SitemapPage() {
 </div>
       </div>
       </div>
-      <Footer />
+    
     </main>
     </>
   );
