@@ -1,16 +1,14 @@
-import LeftSidebarAd from "../components/LeftSidebarAd";
-import RightSidebarAd from "../components/RightSidebarAd";
 import Footer from "../components/Footer";
 
 export default function About() {
   return (
     <>
   <div className="hidden xl:block fixed left-[40px] top-[180px] z-50 w-[160px] h-[600px]">
-    <LeftSidebarAd />
+    
   </div>
 
   <div className="hidden xl:block fixed right-[40px] top-[180px] z-50 w-[160px] h-[300px]">
-    <RightSidebarAd />
+    
   </div>
     <main className="min-h-screen bg-slate-950 text-white">
         

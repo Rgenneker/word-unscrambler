@@ -1,4 +1,3 @@
-import TopLeftAd from "../components/TopLeftAd";
 import { useMemo, useState } from "react";
 import englishWords from "an-array-of-english-words";
 
@@ -35,7 +34,7 @@ export default function WordsEndingWithing() {
   return (
     <main className="min-h-screen bg-slate-950 text-white">
       <div className="fixed left-[30px] top-[90px] z-50 hidden xl:block">
-  <TopLeftAd />
+  
 </div>
       
       <div className="px-6 py-12">

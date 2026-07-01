@@ -5,7 +5,6 @@ import Articles from "./pages/Articles";
 import ArticlePage from "./pages/ArticlePage";
 import ToolGeoRouter from "./components/geo/ToolGeoRouter";
 import WordPage from "./pages/WordPage";
-import SocialBar from "./components/SocialBar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop"; // 
 import Navbar from "./components/Navbar";
@@ -55,7 +54,6 @@ export default function App() {
       </Routes>
       <ToolGeoRouter />
       <Footer />
-      <SocialBar />
-    </BrowserRouter>
+         </BrowserRouter>
   );
 }

@@ -1,7 +1,4 @@
 import { homepageContent } from "../data/homepageContent";
-import RightSidebarAd from "../components/RightSidebarAd";
-import LeftSidebarAd from "../components/LeftSidebarAd";
-import ResultsAd from "../components/ResultsAd";
 import Footer from "../components/Footer";
 import React, { useMemo, useState } from "react";
 import englishWords from "an-array-of-english-words";
@@ -238,10 +235,10 @@ export default function Home() {
   return (
     <main className="min-h-screen overflow-hidden bg-slate-950 text-slate-100">
       <div className="hidden xl:block fixed left-[40px] top-[180px] z-50 w-[160px] h-[600px]">
-  <LeftSidebarAd />
+  
 </div>
 <div className="hidden xl:block fixed right-[40px] top-[180px] z-50 w-[160px] h-[300px]">
-  <RightSidebarAd />
+  
 </div>
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(34,211,238,0.22),transparent_35%),radial-gradient(circle_at_top_right,rgba(168,85,247,0.18),transparent_30%),linear-gradient(180deg,#020617,#0F172A)]" />
 
@@ -521,7 +518,7 @@ export default function Home() {
               </div>
             )}
 <div className="mt-6 flex justify-center">
-  <ResultsAd />
+  
 </div>
             {hasSearched && availableLetters.length < 2 && (
               <div className="rounded-3xl border border-amber-300/20 bg-amber-300/10 p-6 text-amber-100">

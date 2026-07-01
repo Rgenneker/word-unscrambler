@@ -5,7 +5,6 @@ import HowToUseSection from "../components/geo/HowToUseSection";
 import VocabularyGuidance from "../components/geo/VocabularyGuidance";
 import InternalLinks from "../components/geo/InternalLinks";
 import { toolSeoContent } from "../data/toolSeoContent";
-import TopLeftAd from "../components/TopLeftAd";
 import PartnerLinks from "../components/PartnerLinks";
 import { useState } from "react";
 
@@ -133,7 +132,7 @@ const breadcrumbSchema = {
 <StructuredData data={breadcrumbSchema} />
        
       <div className="fixed left-[30px] top-[90px] z-50 hidden xl:block">
-  <TopLeftAd />
+  
 </div>
       
       <div className="p-10">
