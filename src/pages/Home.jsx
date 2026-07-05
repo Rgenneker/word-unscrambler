@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { homepageContent } from "../data/homepageContent";
 import Footer from "../components/Footer";
 import React, { useMemo, useState } from "react";
@@ -120,6 +121,44 @@ export default function Home() {
   const [definitions, setDefinitions] = useState({});
   const [loadingDefinition, setLoadingDefinition] = useState("");
   const [copied, setCopied] = useState(false);
+  const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What dictionaries does WordShuffl use?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "WordShuffl uses comprehensive English word lists to generate valid word combinations for word games, vocabulary building and educational use."
+      }
+    },
+    {
+      "@type": "Question",
+      name: "Can I use blank tiles or wildcards?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. You can enter a question mark or an asterisk to represent a blank tile and WordShuffl will calculate possible letter substitutions."
+      }
+    },
+    {
+      "@type": "Question",
+      name: "Is WordShuffl free?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. WordShuffl is free to use and is designed for students, teachers, writers and word game enthusiasts."
+      }
+    },
+    {
+      "@type": "Question",
+      name: "How are words ranked?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Results are organised to help users identify useful words based on length and scoring."
+      }
+    }
+  ]
+};
 
   const availableLetters = cleanLetters(letters);
   const cleanStarts = cleanLetters(startsWith);
@@ -233,6 +272,18 @@ export default function Home() {
   }
 
   return (
+    <>
+    <Helmet>
+      <title>WordShuffl | Free Word Unscrambler and Word Finder</title>
+      <meta
+        name="description"
+        content="Use WordShuffl to unscramble letters, find high-scoring words, solve word games, improve vocabulary and explore English word patterns."
+      />
+      <link rel="canonical" href="https://wordshuffl.com/" />
+      <script type="application/ld+json">
+        {JSON.stringify(faqSchema)}
+      </script>
+    </Helmet>
     <main className="min-h-screen overflow-hidden bg-slate-950 text-slate-100">
       <div className="hidden xl:block fixed left-[40px] top-[180px] z-50 w-[160px] h-[600px]">
   
@@ -261,7 +312,7 @@ export default function Home() {
           </div>
         </header>
 
-        <section className="grid gap-8 pt-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-start lg:pt-16">
+        <section className="pt-10 lg:pt-16">
           <div>
             <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-cyan-300/20 bg-cyan-400/10 px-4 py-2 text-sm text-cyan-100">
               <Trophy className="h-4 w-4" />
@@ -275,6 +326,11 @@ export default function Home() {
             <p className="mt-5 max-w-2xl text-base leading-7 text-slate-200 sm:text-lg">
               Type or paste letters, generate valid words, refine the results, and copy the final list with scores.
             </p>
+
+            </div>
+            </section>
+
+<div className="mt-10 grid gap-8 lg:grid-cols-2 lg:items-start">
 
             <div className="mt-8 rounded-3xl border border-white/10 bg-slate-900/60 p-4 shadow-[0_10px_40px_rgba(34,211,238,0.15)] sm:p-6">
               <label htmlFor="letters" className="mb-3 block text-sm font-semibold text-slate-100">
@@ -414,56 +470,7 @@ export default function Home() {
                   </button>
                 ))}
               </div>
-             <section className="mt-8">
-  <div className="mb-5 text-center">
-    <p className="text-sm font-medium tracking-wide text-slate-400">
-      Improve your vocabulary and sharpen your word skills by exploring more word games below.
-    </p>
-  </div>
-
-  <div className="flex flex-wrap items-center justify-center gap-3">
-    <a
-      href="https://nyt-wordle-app.vercel.app"
-      target="_blank"
-      rel="noreferrer"
-     className="w-[170px] rounded-2xl border border-cyan-400/20 bg-slate-900 px-5 py-3 text-center text-sm font-semibold text-cyan-200 transition hover:scale-105 hover:bg-cyan-400/10"
-    >
-      Play Wordle
-    </a>
-
-    <a
-      href="https://playscrabble.com/"
-      target="_blank"
-      rel="noreferrer"
-      className="w-[170px] rounded-2xl border border-cyan-400/20 bg-slate-900 px-5 py-3 text-center text-sm font-semibold text-cyan-200 transition hover:scale-105 hover:bg-cyan-400/10"
-    >
-      Play Scrabble
-    </a>
-
-    <a
-      href="https://www.wordgames.com/"
-      target="_blank"
-      rel="noreferrer"
-      className="rounded-2xl border border-purple-400/20 bg-slate-900 px-5 py-3 text-sm font-semibold text-purple-200 transition hover:scale-105 hover:bg-purple-400/10"
-    >
-      Play Word Games
-    </a>
-
-    <a
-      href="https://www.wordplays.com/crossword-solver/PRO"
-      target="_blank"
-      rel="noreferrer"
-      className="w-[170px] rounded-2xl border border-emerald-400/20 bg-slate-900 px-5 py-3 text-center text-sm font-semibold text-emerald-200 transition hover:scale-105 hover:bg-emerald-400/10"
-    >
-      WordPlay
-    </a>
-  </div>
-  
-</section>
-            </div>
-          </div>
-
-          <div className="rounded-[2rem] border border-white/10 bg-slate-900/60 p-5 shadow-[0_10px_40px_rgba(34,211,238,0.15)] sm:p-6">
+<div className="lg:mt-[80px] rounded-[2rem] border border-white/10 bg-slate-900/60 p-5 shadow-[0_10px_40px_rgba(34,211,238,0.15)] sm:p-6">
             <div className="mb-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
               <div>
                 <h2 className="text-xl font-bold">Results</h2>
@@ -509,7 +516,7 @@ export default function Home() {
             )}
 
             {!hasSearched && (
-              <div className="grid min-h-[320px] place-items-center rounded-3xl border border-dashed border-white/10 bg-slate-950/40 p-8 text-center">
+              <div className="grid min-h-[380px] place-items-center rounded-3xl border border-dashed border-white/10 bg-slate-950/40 p-8 text-center">
                 <div>
                   <Shuffle className="mx-auto mb-4 h-12 w-12 text-cyan-100" />
                   <p className="text-lg font-semibold">Start by entering letters.</p>
@@ -563,24 +570,155 @@ export default function Home() {
   </p>
 </div>
 
+
+
                     </div>
                   ))}
                 </div>
               </div>
             )}
           </div>
-        </section>
-        <section className="mt-20 rounded-3xl border border-white/10 bg-slate-900/60 p-8">
-  <h2 className="text-3xl font-black text-cyan-300">
-    About WordShuffl
-  </h2>
+              </div>
+             
+{/* Game Strategies + How To */}
+<section className="mt-8 rounded-3xl border border-white/10 bg-slate-900/60 p-8">
+  <div className="grid gap-8 lg:grid-cols-1 lg:items-start">
+    
 
-  <p className="mt-6 whitespace-pre-line leading-8 text-slate-300">
-    {homepageContent.content}
-  </p>
+    <div>
+      <h2 className="text-3xl font-black text-cyan-300">
+        How to Use the WordShuffl Unscrambler Tool
+      </h2>
+
+      <p className="mt-6 leading-8 text-slate-300">
+        Unscrambling letters and finding the highest-scoring combinations should not be a guessing game. WordShuffl uses a powerful dictionary engine to analyse your letter combinations in seconds, helping you discover valid English words quickly and efficiently.
+      </p>
+
+      <ol className="mt-6 space-y-6 list-decimal pl-6 text-slate-300 leading-8">
+        <li>
+          <strong className="text-cyan-300">Enter Your Letters</strong><br />
+          Type up to 15 letters into the search box. If you are playing games such as Scrabble or Words With Friends, you can also include blank tiles using ? or *.
+        </li>
+
+        <li>
+          <strong className="text-cyan-300">Apply Advanced Filters</strong><br />
+          Open the options panel to narrow your results by starting letters, ending letters, required characters, excluded letters, patterns and other useful search criteria.
+        </li>
+
+        <li>
+          <strong className="text-cyan-300">Review Your Results</strong><br />
+          Browse words organised by length and score so you can quickly identify the strongest possible plays.
+        </li>
+
+        <li>
+          <strong className="text-cyan-300">Copy Your Results</strong><br />
+          Use the Copy Results button to copy your complete list to your clipboard for studying, practising or sharing.
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+<section className="mt-8">
+  <div className="mb-5 text-center">
+    <p className="text-sm font-medium tracking-wide text-slate-400">
+      Improve your vocabulary and sharpen your word skills by exploring more word games below.
+    </p>
+  </div>
+
+  <div className="flex flex-wrap items-center justify-center gap-3">
+    <a
+      href="https://nyt-wordle-app.vercel.app"
+      target="_blank"
+      rel="noreferrer"
+     className="w-[170px] rounded-2xl border border-cyan-400/20 bg-slate-900 px-5 py-3 text-center text-sm font-semibold text-cyan-200 transition hover:scale-105 hover:bg-cyan-400/10"
+    >
+      Play Wordle
+    </a>
+
+    <a
+      href="https://playscrabble.com/"
+      target="_blank"
+      rel="noreferrer"
+      className="w-[170px] rounded-2xl border border-cyan-400/20 bg-slate-900 px-5 py-3 text-center text-sm font-semibold text-cyan-200 transition hover:scale-105 hover:bg-cyan-400/10"
+    >
+      Play Scrabble
+    </a>
+
+    <a
+      href="https://www.wordgames.com/"
+      target="_blank"
+      rel="noreferrer"
+      className="rounded-2xl border border-purple-400/20 bg-slate-900 px-5 py-3 text-sm font-semibold text-purple-200 transition hover:scale-105 hover:bg-purple-400/10"
+    >
+      Play Word Games
+    </a>
+
+    <a
+      href="https://www.wordplays.com/crossword-solver/PRO"
+      target="_blank"
+      rel="noreferrer"
+      className="w-[170px] rounded-2xl border border-emerald-400/20 bg-slate-900 px-5 py-3 text-center text-sm font-semibold text-emerald-200 transition hover:scale-105 hover:bg-emerald-400/10"
+    >
+      WordPlay
+    </a>
+  </div> 
 </section>
 
-        <section className="mt-10 grid gap-4 sm:grid-cols-3">
+<section className="mt-0 rounded-3xl border border-white/10 bg-slate-900/60 p-8">
+  <h2 className="text-3xl font-black text-cyan-300">
+    Frequently Asked Questions
+  </h2>
+
+  <div className="mt-8 space-y-8">
+
+    <div>
+      <h3 className="text-xl font-bold text-white">
+        What dictionaries does WordShuffl use?
+      </h3>
+
+      <p className="mt-2 leading-8 text-slate-300">
+        WordShuffl uses comprehensive English word lists to generate valid word
+        combinations for word games, vocabulary building and educational use.
+      </p>
+    </div>
+
+    <div>
+      <h3 className="text-xl font-bold text-white">
+        Can I use blank tiles or wildcards?
+      </h3>
+
+      <p className="mt-2 leading-8 text-slate-300">
+        Yes. Simply enter a question mark (?) or an asterisk (*) to represent a
+        blank tile and WordShuffl will calculate possible letter substitutions.
+      </p>
+    </div>
+
+    <div>
+      <h3 className="text-xl font-bold text-white">
+        Is WordShuffl free?
+      </h3>
+
+      <p className="mt-2 leading-8 text-slate-300">
+        Yes. WordShuffl is completely free to use and is designed for students,
+        teachers, writers and word game enthusiasts around the world.
+      </p>
+    </div>
+
+    <div>
+      <h3 className="text-xl font-bold text-white">
+        How are words ranked?
+      </h3>
+
+      <p className="mt-2 leading-8 text-slate-300">
+        Results are organised to help you quickly identify useful words based
+        on length and scoring, making it easier to find your best possible
+        plays.
+      </p>
+    </div>
+
+  </div>
+</section>
+<section className="-mt-112 flex flex-col gap-4 max-w-md">
           <div className="rounded-3xl border border-white/10 bg-slate-900/50 p-5">
             <p className="font-bold text-slate-100">Score ranked</p>
             <p className="mt-2 text-sm leading-6 text-slate-400">Highest scoring words appear first.</p>
@@ -594,8 +732,737 @@ export default function Home() {
             <p className="mt-2 text-sm leading-6 text-slate-400">Copy all words and scores in one click.</p>
           </div>
         </section>
+ 
+            </div>
+
+
+        
+        <section className="mt-10 rounded-3xl border border-white/10 bg-slate-900/60 p-8">
+  <h2 className="text-3xl font-black text-cyan-300">
+    About WordShuffl
+  </h2>
+
+  <p className="mt-6 whitespace-pre-line leading-8 text-slate-300">
+    {homepageContent.content}
+  </p>
+</section>
+
+        
+        {/* How to Use WordShuffl */}
+
+
+{/* FAQ */}
+
+<section className="mt-16 rounded-3xl border border-white/10 bg-slate-900/60 p-8">
+  <h2 className="text-3xl font-black text-cyan-300">
+    Explore More Word Tools
+  </h2>
+
+  <p className="mt-6 leading-8 text-slate-300">
+    WordShuffl offers much more than a simple word unscrambler. Explore our
+    growing collection of free word tools designed for students, teachers,
+    puzzle enthusiasts, writers and competitive word game players.
+  </p>
+
+  <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+
+    <a
+      href="/5-letter-words"
+      className="rounded-2xl border border-white/10 bg-slate-900/50 p-5 hover:border-cyan-300 transition"
+    >
+      <h3 className="font-bold text-white">5 Letter Words</h3>
+      <p className="mt-2 text-slate-400">
+        Browse thousands of useful five-letter words for Wordle and other games.
+      </p>
+    </a>
+
+    <a
+      href="/word-length"
+      className="rounded-2xl border border-white/10 bg-slate-900/50 p-5 hover:border-cyan-300 transition"
+    >
+      <h3 className="font-bold text-white">Words by Length</h3>
+      <p className="mt-2 text-slate-400">
+        Find words from two letters through to the longest English words.
+      </p>
+    </a>
+
+    <a
+      href="/words-starting-with"
+      className="rounded-2xl border border-white/10 bg-slate-900/50 p-5 hover:border-cyan-300 transition"
+    >
+      <h3 className="font-bold text-white">Words Starting With</h3>
+      <p className="mt-2 text-slate-400">
+        Discover words beginning with any letter or letter combination.
+      </p>
+    </a>
+
+    <a
+      href="/words-ending-with"
+      className="rounded-2xl border border-white/10 bg-slate-900/50 p-5 hover:border-cyan-300 transition"
+    >
+      <h3 className="font-bold text-white">Words Ending With</h3>
+      <p className="mt-2 text-slate-400">
+        Search words ending in specific suffixes or letter patterns.
+      </p>
+    </a>
+
+    <a
+      href="/letter-combinations"
+      className="rounded-2xl border border-white/10 bg-slate-900/50 p-5 hover:border-cyan-300 transition"
+    >
+      <h3 className="font-bold text-white">Letter Combinations</h3>
+      <p className="mt-2 text-slate-400">
+        Learn common English letter combinations and improve your vocabulary.
+      </p>
+    </a>
+
+    <a
+      href="/longest-english-words"
+      className="rounded-2xl border border-white/10 bg-slate-900/50 p-5 hover:border-cyan-300 transition"
+    >
+      <h3 className="font-bold text-white">Longest English Words</h3>
+      <p className="mt-2 text-slate-400">
+        Explore fascinating long English words and their meanings.
+      </p>
+    </a>
+
+  </div>
+</section>
+<section className="mt-16 rounded-3xl border border-white/10 bg-slate-900/60 p-8">
+  <h2 className="text-3xl font-black text-cyan-300">
+    Understanding Word Unscramblers
+  </h2>
+
+  <div className="mt-8 space-y-6 leading-8 text-slate-300">
+
+    <p>
+      A word unscrambler is a tool that rearranges a collection of letters into
+      valid English words. While the concept appears simple, it has practical
+      applications in education, competitive word games, language learning and
+      creative writing.
+    </p>
+
+    <p>
+      Instead of manually trying hundreds of possible letter combinations,
+      WordShuffl analyses your available letters and presents valid words in a
+      matter of seconds. This saves time while helping users recognise letter
+      patterns that become easier to identify with practice.
+    </p>
+
+    <p>
+      Word unscramblers are widely used by students studying English,
+      crossword enthusiasts, Scrabble players, Words With Friends
+      competitors, Wordle fans and anyone interested in expanding their
+      vocabulary.
+    </p>
+
+    <p>
+      Regular practice with an unscrambler also improves spelling,
+      pronunciation awareness and recognition of prefixes, suffixes and common
+      word endings. Over time these skills become valuable in both academic and
+      professional communication.
+    </p>
+
+  </div>
+</section>
+<section className="mt-16 rounded-3xl border border-white/10 bg-slate-900/60 p-8">
+  <h2 className="text-3xl font-black text-cyan-300">
+    The Science Behind English Word Patterns
+  </h2>
+
+  <div className="mt-8 space-y-6 leading-8 text-slate-300">
+
+    <p>
+      The English language is built on thousands of predictable letter
+      combinations. Certain letters naturally appear together more often than
+      others, making it easier for experienced readers and word game players to
+      recognise possible words. Examples include combinations such as <strong>TH</strong>,
+      <strong> CH</strong>, <strong>SH</strong>, <strong>ING</strong>,
+      <strong>TION</strong> and <strong>ER</strong>.
+    </p>
+
+    <p>
+      Recognising these common patterns is one of the fastest ways to improve
+      your ability to solve anagrams, complete crosswords and identify hidden
+      words from a random collection of letters. Instead of viewing letters
+      individually, experienced players learn to recognise familiar groups of
+      letters that frequently appear together.
+    </p>
+
+    <p>
+      WordShuffl helps reinforce this learning process by instantly generating
+      valid words from your available letters. As you compare the generated
+      results, you naturally become more familiar with prefixes, suffixes,
+      vowel placement and common consonant clusters that appear throughout the
+      English language.
+    </p>
+
+    <p>
+      Over time, regular exposure to these patterns strengthens spelling,
+      reading comprehension and vocabulary recall. These skills benefit not
+      only competitive word game players but also students, teachers, writers,
+      editors and professionals who work with language every day.
+    </p>
+
+  </div>
+</section>
+<section className="mt-16 rounded-3xl border border-white/10 bg-slate-900/60 p-8">
+  <h2 className="text-3xl font-black text-cyan-300">
+    Build Your Vocabulary One Word at a Time
+  </h2>
+
+  <div className="mt-8 space-y-6 leading-8 text-slate-300">
+
+    <p>
+      Every new word you learn increases your ability to communicate clearly,
+      understand written information and express ideas with greater confidence.
+      Building vocabulary is not only important for school and university
+      studies but also for business communication, public speaking and everyday
+      conversations.
+    </p>
+
+    <p>
+      One of the easiest ways to expand your vocabulary is to explore words
+      that share common roots, prefixes and suffixes. When you understand how
+      words are formed, you begin recognising unfamiliar words more quickly and
+      can often predict their meanings from their structure.
+    </p>
+
+    <p>
+      WordShuffl encourages this learning by presenting multiple valid words
+      from the same group of letters. Instead of discovering a single answer,
+      users can compare different word lengths, spelling patterns and letter
+      arrangements, creating valuable opportunities for learning.
+    </p>
+
+    <p>
+      Whether you are preparing for examinations, improving your spelling,
+      writing professionally or simply enjoying daily word puzzles, consistent
+      vocabulary practice develops stronger language skills that last a
+      lifetime.
+    </p>
+
+  </div>
+</section>
+<section className="mt-16 rounded-3xl border border-white/10 bg-slate-900/60 p-8">
+  <h2 className="text-3xl font-black text-cyan-300">
+    Winning Strategies for Popular Word Games
+  </h2>
+
+  <div className="mt-8 space-y-6 leading-8 text-slate-300">
+
+    <p>
+      Every word game rewards a slightly different strategy. While a large
+      vocabulary is always an advantage, understanding the rules and scoring
+      system of each game can dramatically improve your results. WordShuffl
+      helps you identify possible words quickly, allowing you to spend more
+      time planning your next move and less time rearranging letters.
+    </p>
+
+    <h3 className="text-xl font-bold text-white">
+      Scrabble
+    </h3>
+
+    <p>
+      Success in Scrabble depends on more than finding long words. High-scoring
+      letters such as Q, Z, X and J can dramatically increase your score when
+      placed on premium board squares. Short words can often score more points
+      than longer ones when they create multiple words in a single move.
+      Learning common two-letter and three-letter words is one of the quickest
+      ways to improve your overall performance.
+    </p>
+
+    <h3 className="text-xl font-bold text-white">
+      Words With Friends
+    </h3>
+
+    <p>
+      Although similar to Scrabble, Words With Friends uses different letter
+      values and board layouts. Understanding these differences allows players
+      to maximise scoring opportunities while protecting valuable bonus
+      squares from opponents.
+    </p>
+
+    <h3 className="text-xl font-bold text-white">
+      Wordle
+    </h3>
+
+    <p>
+      Wordle rewards logical elimination rather than guessing. Begin with words
+      that contain common vowels and frequently used consonants. After each
+      guess, remove impossible letters and narrow the remaining possibilities.
+      WordShuffl can help generate valid combinations once you know which
+      letters belong in the solution.
+    </p>
+
+    <h3 className="text-xl font-bold text-white">
+      Crossword Puzzles
+    </h3>
+
+    <p>
+      Crossword solving becomes easier when you combine known letters with word
+      length and pattern matching. Searching for words that begin or end with
+      particular letters often reduces hundreds of possibilities to just a
+      handful of likely answers.
+    </p>
+
+  </div>
+</section>
+<section className="mt-16 rounded-3xl border border-white/10 bg-slate-900/60 p-8">
+  <h2 className="text-3xl font-black text-cyan-300">
+    Common English Prefixes
+  </h2>
+
+  <div className="mt-8 space-y-6 leading-8 text-slate-300">
+
+    <p>
+      Prefixes are groups of letters added to the beginning of words to change
+      their meaning. Understanding prefixes helps you recognise unfamiliar
+      vocabulary and identify possible words during word games.
+    </p>
+
+    <div className="overflow-x-auto">
+      <table className="mt-6 w-full border-collapse">
+        <thead>
+          <tr className="border-b border-white/10">
+            <th className="py-3 text-left text-cyan-300">Prefix</th>
+            <th className="py-3 text-left text-cyan-300">Meaning</th>
+            <th className="py-3 text-left text-cyan-300">Example</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr className="border-b border-white/5">
+            <td className="py-3">Un-</td>
+            <td>Not</td>
+            <td>Unhappy</td>
+          </tr>
+
+          <tr className="border-b border-white/5">
+            <td className="py-3">Re-</td>
+            <td>Again</td>
+            <td>Rewrite</td>
+          </tr>
+
+          <tr className="border-b border-white/5">
+            <td className="py-3">Pre-</td>
+            <td>Before</td>
+            <td>Preview</td>
+          </tr>
+
+          <tr className="border-b border-white/5">
+            <td className="py-3">Dis-</td>
+            <td>Opposite</td>
+            <td>Disagree</td>
+          </tr>
+
+          <tr className="border-b border-white/5">
+            <td className="py-3">Inter-</td>
+            <td>Between</td>
+            <td>International</td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+    <p>
+      Recognising these prefixes makes it easier to build larger words from a
+      smaller collection of letters and improves vocabulary development over
+      time.
+    </p>
+
+  </div>
+</section>
+<section className="mt-16 rounded-3xl border border-white/10 bg-slate-900/60 p-8">
+  <h2 className="text-3xl font-black text-cyan-300">
+    Common English Suffixes
+  </h2>
+
+  <div className="mt-8 space-y-6 leading-8 text-slate-300">
+
+    <p>
+      Suffixes are groups of letters added to the end of a word to change its
+      meaning or grammatical function. Recognising common suffixes helps players
+      identify longer words, improve spelling and understand unfamiliar
+      vocabulary.
+    </p>
+
+    <div className="overflow-x-auto">
+      <table className="mt-6 w-full border-collapse">
+        <thead>
+          <tr className="border-b border-white/10">
+            <th className="py-3 text-left text-cyan-300">Suffix</th>
+            <th className="py-3 text-left text-cyan-300">Purpose</th>
+            <th className="py-3 text-left text-cyan-300">Example</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr className="border-b border-white/5">
+            <td className="py-3">-ing</td>
+            <td>Continuous action</td>
+            <td>Running</td>
+          </tr>
+
+          <tr className="border-b border-white/5">
+            <td className="py-3">-ed</td>
+            <td>Past tense</td>
+            <td>Played</td>
+          </tr>
+
+          <tr className="border-b border-white/5">
+            <td className="py-3">-er</td>
+            <td>Person or comparison</td>
+            <td>Teacher</td>
+          </tr>
+
+          <tr className="border-b border-white/5">
+            <td className="py-3">-est</td>
+            <td>Highest degree</td>
+            <td>Fastest</td>
+          </tr>
+
+          <tr className="border-b border-white/5">
+            <td className="py-3">-tion</td>
+            <td>Noun formation</td>
+            <td>Education</td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+    <p>
+      Learning suffixes improves vocabulary recognition and makes it easier to
+      discover additional words from the same collection of letters.
+    </p>
+
+  </div>
+</section>
+<section className="mt-16 rounded-3xl border border-white/10 bg-slate-900/60 p-8">
+  <h2 className="text-3xl font-black text-cyan-300">
+    High-Scoring Scrabble Letters
+  </h2>
+
+  <div className="mt-8 space-y-6 leading-8 text-slate-300">
+
+    <p>
+      One of the fastest ways to improve your Scrabble performance is to learn
+      the value of individual letters. While common letters appear more often,
+      rare letters generally carry higher scores and can produce exceptional
+      results when placed on premium board squares.
+    </p>
+
+    <div className="overflow-x-auto">
+
+      <table className="mt-6 w-full border-collapse">
+
+        <thead>
+
+          <tr className="border-b border-white/10">
+            <th className="py-3 text-left text-cyan-300">Letter</th>
+            <th className="py-3 text-left text-cyan-300">Typical Value</th>
+            <th className="py-3 text-left text-cyan-300">Strategy</th>
+          </tr>
+
+        </thead>
+
+        <tbody>
+
+          <tr className="border-b border-white/5">
+            <td className="py-3">Q</td>
+            <td>10</td>
+            <td>Combine with U whenever possible.</td>
+          </tr>
+
+          <tr className="border-b border-white/5">
+            <td className="py-3">Z</td>
+            <td>10</td>
+            <td>Excellent on double and triple letter squares.</td>
+          </tr>
+
+          <tr className="border-b border-white/5">
+            <td className="py-3">X</td>
+            <td>8</td>
+            <td>Creates valuable short words.</td>
+          </tr>
+
+          <tr className="border-b border-white/5">
+            <td className="py-3">J</td>
+            <td>8</td>
+            <td>Powerful when combined with vowels.</td>
+          </tr>
+
+          <tr className="border-b border-white/5">
+            <td className="py-3">K</td>
+            <td>5</td>
+            <td>Useful for extending existing words.</td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+    <p>
+      Remember that the best move is not always the longest word. Board
+      position, bonus squares and creating multiple words often produce higher
+      overall scores.
+    </p>
+
+  </div>
+</section>
+<section className="mt-16 rounded-3xl border border-white/10 bg-slate-900/60 p-8">
+  <h2 className="text-3xl font-black text-cyan-300">
+    The Most Common English Letter Combinations
+  </h2>
+
+  <div className="mt-8 space-y-6 leading-8 text-slate-300">
+
+    <p>
+      English words are built from recurring groups of letters. Becoming
+      familiar with these combinations helps you recognise possible words more
+      quickly and improves both spelling and vocabulary.
+    </p>
+
+    <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+
+      <div className="rounded-xl bg-slate-900/50 p-4">
+        <strong className="text-cyan-300">TH</strong>
+        <p className="mt-2">think, three, thank, those</p>
+      </div>
+
+      <div className="rounded-xl bg-slate-900/50 p-4">
+        <strong className="text-cyan-300">CH</strong>
+        <p className="mt-2">chair, change, choice</p>
+      </div>
+
+      <div className="rounded-xl bg-slate-900/50 p-4">
+        <strong className="text-cyan-300">SH</strong>
+        <p className="mt-2">share, short, shell</p>
+      </div>
+
+      <div className="rounded-xl bg-slate-900/50 p-4">
+        <strong className="text-cyan-300">ING</strong>
+        <p className="mt-2">running, reading, writing</p>
+      </div>
+
+      <div className="rounded-xl bg-slate-900/50 p-4">
+        <strong className="text-cyan-300">TION</strong>
+        <p className="mt-2">education, action, solution</p>
+      </div>
+
+      <div className="rounded-xl bg-slate-900/50 p-4">
+        <strong className="text-cyan-300">ER</strong>
+        <p className="mt-2">teacher, player, reader</p>
+      </div>
+
+    </div>
+
+    <p>
+      The more frequently you encounter these patterns, the easier it becomes
+      to identify hidden words from scrambled letters and solve increasingly
+      difficult word puzzles.
+    </p>
+
+  </div>
+</section>
+<section className="mt-16 rounded-3xl border border-white/10 bg-slate-900/60 p-8">
+  <h2 className="text-3xl font-black text-cyan-300">
+    The History of Word Games
+  </h2>
+
+  <div className="mt-8 space-y-6 leading-8 text-slate-300">
+
+    <p>
+      Word games have entertained and educated people for centuries. Long before
+      computers and mobile phones, families gathered around tables to solve
+      crossword puzzles, spelling challenges and vocabulary games that tested
+      memory, language skills and logical thinking.
+    </p>
+
+    <p>
+      One of the most recognised word games is Scrabble, introduced in the
+      twentieth century and now played by millions of people around the world.
+      The game's combination of vocabulary, mathematics and strategy has made it
+      popular among both casual players and international tournament
+      competitors.
+    </p>
+
+    <p>
+      In recent years, digital games such as Wordle and Words With Friends have
+      introduced a new generation to the enjoyment of word puzzles. These games
+      encourage players to think critically, recognise letter patterns and
+      expand their vocabulary while competing against friends or solving daily
+      challenges.
+    </p>
+
+    <p>
+      Today, online tools such as WordShuffl help players learn from every game.
+      Rather than simply providing answers, they encourage users to discover new
+      words, recognise common letter combinations and strengthen their language
+      skills over time.
+    </p>
+
+  </div>
+</section>
+<section className="mt-16 rounded-3xl border border-white/10 bg-slate-900/60 p-8">
+  <h2 className="text-3xl font-black text-cyan-300">
+    WordShuffl Learning Centre
+  </h2>
+
+  <div className="mt-8 grid gap-6 lg:grid-cols-2">
+
+    <div className="rounded-2xl border border-white/10 bg-slate-900/50 p-6">
+      <h3 className="text-xl font-bold text-white">
+        Learn New Vocabulary
+      </h3>
+
+      <p className="mt-4 leading-7 text-slate-300">
+        Discover unfamiliar words, understand common spelling patterns and
+        improve your everyday communication through regular vocabulary practice.
+      </p>
+    </div>
+
+    <div className="rounded-2xl border border-white/10 bg-slate-900/50 p-6">
+      <h3 className="text-xl font-bold text-white">
+        Improve Spelling
+      </h3>
+
+      <p className="mt-4 leading-7 text-slate-300">
+        Explore words grouped by similar letters, helping you recognise correct
+        spelling while reducing common mistakes.
+      </p>
+    </div>
+
+    <div className="rounded-2xl border border-white/10 bg-slate-900/50 p-6">
+      <h3 className="text-xl font-bold text-white">
+        Strengthen Memory
+      </h3>
+
+      <p className="mt-4 leading-7 text-slate-300">
+        Regular exposure to new words improves memory recall and helps learners
+        remember vocabulary more effectively.
+      </p>
+    </div>
+
+    <div className="rounded-2xl border border-white/10 bg-slate-900/50 p-6">
+      <h3 className="text-xl font-bold text-white">
+        Practise Every Day
+      </h3>
+
+      <p className="mt-4 leading-7 text-slate-300">
+        Spending just a few minutes each day exploring new words can gradually
+        build stronger language skills and greater confidence.
+      </p>
+    </div>
+
+  </div>
+</section>
+<section className="mt-16 rounded-3xl border border-white/10 bg-slate-900/60 p-8">
+  <h2 className="text-3xl font-black text-cyan-300">
+    Helping Children Develop Stronger Language Skills
+  </h2>
+
+  <div className="mt-8 space-y-6 leading-8 text-slate-300">
+
+    <p>
+      Parents and teachers play an important role in developing children's
+      vocabulary. Encouraging learners to experiment with letters, discover new
+      words and understand spelling patterns creates lasting language skills
+      that support reading, writing and communication.
+    </p>
+
+    <p>
+      WordShuffl can be incorporated into classroom activities, homework,
+      spelling competitions and vocabulary games. Instead of simply memorising
+      words, learners actively explore how letters combine to form meaningful
+      language.
+    </p>
+
+    <p>
+      Teachers can also use the tool when preparing spelling tests, classroom
+      challenges and reading exercises, while parents can encourage daily word
+      practice as part of homework or family game nights.
+    </p>
+
+    <p>
+      By making vocabulary practice enjoyable and interactive, learners become
+      more confident readers, writers and communicators.
+    </p>
+
+  </div>
+</section>
+<section className="mt-16 mb-20 rounded-3xl border border-white/10 bg-slate-900/60 p-8">
+  <h2 className="text-3xl font-black text-cyan-300">
+    Become a Better Word Player Every Day
+  </h2>
+
+  <div className="mt-8 space-y-6 leading-8 text-slate-300">
+
+    <p>
+      Improving your word game skills is a gradual process. Every puzzle you
+      solve and every new word you learn strengthens your vocabulary and your
+      ability to recognise letter patterns more quickly.
+    </p>
+
+    <p>
+      Challenge yourself to learn a few unfamiliar words each day, explore
+      different word lengths, practise recognising prefixes and suffixes, and
+      experiment with different letter combinations. Over time, these habits
+      will improve both your confidence and your overall performance in word
+      games.
+    </p>
+
+    <p>
+      Whether you are solving today's Wordle, competing in Scrabble, completing
+      a crossword puzzle or expanding your vocabulary for school or work,
+      WordShuffl is designed to make word discovery faster, easier and more
+      enjoyable.
+    </p>
+
+    <p>
+      Keep exploring, keep learning and keep challenging yourself. Every new
+      word opens the door to better communication, stronger language skills and
+      more rewarding word game experiences.
+    </p>
+
+  </div>
+</section>
+<section className="mt-16 rounded-3xl border border-white/10 bg-slate-900/60 p-8">
+  <h2 className="text-3xl font-black text-cyan-300">
+    Why WordShuffl Helps You Find Better Words
+  </h2>
+
+  <div className="mt-8 space-y-6 leading-8 text-slate-300">
+    <p>
+      WordShuffl is built to help you move beyond random guessing. Instead of
+      trying letters one by one, you can enter your available letters and let
+      the tool generate useful word combinations quickly.
+    </p>
+
+    <p>
+      This makes it helpful for word games, classroom activities, spelling
+      practice, vocabulary development, creative writing and puzzle solving.
+      Whether you are looking for short words, long words, high-scoring words or
+      specific letter patterns, WordShuffl gives you a faster way to explore the
+      English language.
+    </p>
+
+    <p>
+      The tool is especially useful when you need to compare multiple word
+      options. You can test different letters, apply filters and copy your
+      results without having to search manually through long word lists.
+    </p>
+  </div>
+</section>
       </div>
   
     </main>
+    </>
   );
 }
