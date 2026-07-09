@@ -3,13 +3,6 @@ import Footer from "../components/Footer";
 export default function About() {
   return (
     <>
-  <div className="hidden xl:block fixed left-[40px] top-[180px] z-50 w-[160px] h-[600px]">
-    
-  </div>
-
-  <div className="hidden xl:block fixed right-[40px] top-[180px] z-50 w-[160px] h-[300px]">
-    
-  </div>
     <main className="min-h-screen bg-slate-950 text-slate-100">
   <section className="mx-auto max-w-7xl px-6 py-16">
     <div className="max-w-4xl">

@@ -131,10 +131,6 @@ const breadcrumbSchema = {
 <StructuredData data={organizationSchema} />
 <StructuredData data={breadcrumbSchema} />
        
-      <div className="fixed left-[30px] top-[90px] z-50 hidden xl:block">
-  
-</div>
-      
       <div className="p-10">
         <div className="mx-auto max-w-7xl">
 

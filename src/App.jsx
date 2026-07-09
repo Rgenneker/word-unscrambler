@@ -9,6 +9,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop"; // 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import AdSlots from "./components/AdSlots";
 
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -30,6 +31,7 @@ export default function App() {
       <ScrollToTop /> {/* This fixes the scroll behavior for all links instantly */}
       <Navbar />
       
+      <AdSlots />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/word/:word" element={<WordPage />} />

@@ -33,10 +33,6 @@ export default function WordsEndingWithing() {
 
   return (
     <main className="min-h-screen bg-slate-950 text-white">
-      <div className="fixed left-[30px] top-[90px] z-50 hidden xl:block">
-  
-</div>
-      
       <div className="px-6 py-12">
         <div className="mx-auto max-w-7xl">
           <div className="text-center">
