@@ -2,34 +2,53 @@ import { useEffect, useState } from "react";
 
 function useAdScript({ scriptId, containerId, options, src, attrs = {}, insertBefore = false }) {
   useEffect(() => {
-    if (typeof window === "undefined") return;
-    if (document.getElementById(scriptId)) return;
-
-    if (options) {
-      window.atOptions = options;
-    }
-
-    const script = document.createElement("script");
-    script.id = scriptId;
-    script.async = true;
-
-    if (src) {
-      script.src = src;
-    }
-
-    Object.entries(attrs).forEach(([key, value]) => {
-      script.setAttribute(key, value);
-    });
-
-    const container = document.getElementById(containerId);
-    if (container) {
-      if (insertBefore && container.parentNode) {
-        container.parentNode.insertBefore(script, container);
-      } else {
-        container.appendChild(script);
+    try {
+      if (typeof window === "undefined") return;
+      if (document.getElementById(scriptId)) {
+        console.debug("ad-loader: script already present", { scriptId });
+        return;
       }
-    } else {
-      document.body.appendChild(script);
+
+      if (options) {
+        // expose options for provider script
+        window.atOptions = options;
+        console.debug("ad-loader: set atOptions", { scriptId, options });
+      }
+
+      const script = document.createElement("script");
+      script.id = scriptId;
+      script.async = true;
+
+      if (src) {
+        script.src = src;
+      }
+
+      Object.entries(attrs).forEach(([key, value]) => {
+        script.setAttribute(key, value);
+      });
+
+      script.onload = () => {
+        console.debug("ad-loader: script loaded", { scriptId, src });
+      };
+
+      script.onerror = (err) => {
+        console.error("ad-loader: script failed to load", { scriptId, src, err });
+      };
+
+      const container = document.getElementById(containerId);
+      if (container) {
+        console.debug("ad-loader: attaching script to container", { scriptId, containerId });
+        if (insertBefore && container.parentNode) {
+          container.parentNode.insertBefore(script, container);
+        } else {
+          container.appendChild(script);
+        }
+      } else {
+        console.debug("ad-loader: container not found, appending script to body", { scriptId, containerId });
+        document.body.appendChild(script);
+      }
+    } catch (e) {
+      console.error("ad-loader: unexpected error", e);
     }
   }, []);
 }
