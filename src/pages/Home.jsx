@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet-async";
-import NativeBannerAd from "../Components/NativeBannerAd";
+import NativeBannerAd from "../components/NativeBannerAd";
 import { homepageContent } from "../data/homepageContent";
 import Footer from "../components/Footer";
 import React, { useMemo, useState } from "react";
@@ -271,6 +271,7 @@ export default function Home() {
     setHasSearched(true);
     setCopied(false);
   }
+  <NativeBannerAd />
 
   return (
     <>
@@ -324,8 +325,7 @@ export default function Home() {
 
             </div>
             </section>
-            <NativeBannerAd />
-            
+                      
 
 <div className="mt-10 grid gap-8 lg:grid-cols-2 lg:items-start">
 
@@ -1458,6 +1458,7 @@ export default function Home() {
   </div>
 </section>
       </div>
+      
   
     </main>
     </>
