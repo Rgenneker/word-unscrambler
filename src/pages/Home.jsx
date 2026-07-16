@@ -1,5 +1,4 @@
 import { Helmet } from "react-helmet-async";
-import NativeBannerAd from "../components/NativeBannerAd";
 import { homepageContent } from "../data/homepageContent";
 import Footer from "../components/Footer";
 import React, { useMemo, useState } from "react";
@@ -286,7 +285,6 @@ export default function Home() {
       </script>
     </Helmet>
     <main className="min-h-screen overflow-hidden bg-slate-950 text-slate-100">
-      <NativeBannerAd />
       <div className="hidden xl:block fixed left-[40px] top-[180px] z-50 w-[160px] h-[600px]">
   
 </div>
