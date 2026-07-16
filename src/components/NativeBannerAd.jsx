@@ -1,49 +1,44 @@
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 
 const AD_ID = "0f8e7be192fc2efa33c5da2e34e2f56a";
-const SCRIPT_URL =
-  "https://pl29741880.effectivecpmnetwork.com/0f8e7be192fc2efa33c5da2e34e2f56a/invoke.js";
 
 export default function NativeBannerAd() {
-  const wrapperRef = useRef(null);
-
   useEffect(() => {
-    const wrapper = wrapperRef.current;
+    const scriptId = `adsterra-script-${AD_ID}`;
 
-    if (!wrapper) return;
+    if (document.getElementById(scriptId)) return;
 
-    // Clear anything left from an earlier render
-    wrapper.innerHTML = "";
+    const container = document.getElementById(`container-${AD_ID}`);
 
-    // Adsterra requires this exact container ID
-    const adContainer = document.createElement("div");
-    adContainer.id = `container-${AD_ID}`;
-    wrapper.appendChild(adContainer);
+    if (!container) return;
 
-    // Load the Adsterra script
     const script = document.createElement("script");
+
+    script.id = scriptId;
     script.async = true;
     script.setAttribute("data-cfasync", "false");
-    script.src = SCRIPT_URL;
+    script.src =
+      "https://pl29741880.effectivecpmnetwork.com/0f8e7be192fc2efa33c5da2e34e2f56a/invoke.js";
 
     script.onload = () => {
       console.log("Adsterra Native Banner loaded successfully");
     };
 
-    script.onerror = (error) => {
-      console.error("Adsterra Native Banner failed to load", error);
+    script.onerror = () => {
+      console.error("Adsterra Native Banner failed to load");
     };
 
-    wrapper.insertBefore(script, adContainer);
-
-    return () => {
-      wrapper.innerHTML = "";
-    };
+    container.parentNode?.insertBefore(script, container);
   }, []);
 
   return (
-    <div className="my-6 flex w-full justify-center">
-      <div ref={wrapperRef} className="w-full" />
+    <div className="w-full border-b border-white/10 bg-slate-950/90 px-4 py-3">
+      <div className="mx-auto flex min-h-[90px] max-w-7xl items-center justify-center">
+        <div
+          id={`container-${AD_ID}`}
+          className="w-full text-center"
+        />
+      </div>
     </div>
   );
 }
