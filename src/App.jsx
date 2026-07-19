@@ -6,7 +6,7 @@ import ArticlePage from "./pages/ArticlePage";
 import ToolGeoRouter from "./components/geo/ToolGeoRouter";
 import WordPage from "./pages/WordPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import ScrollToTop from "./components/ScrollToTop"; // 
+import ScrollToTop from "./components/ScrollToTop";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
